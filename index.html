@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naomi Natnael | Roommate Profile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-light: #f6f4ef;
+      --bg-dark: #0f2e4e;
+      --bg-teal: #cfe6e8;
+      --text-dark: #111;
+      --text-light: #ffffff;
+      --accent: #000000;
+      --accent-soft: #3a5a7a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+    }
+
+    section {
+      padding: 80px 8vw;
+    }
+
+    h1, h2, h3 {
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      background: radial-gradient(circle at right, #fff 0%, var(--bg-teal) 45%, #b7d9dc 100%);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .hero .title {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .hero img {
+      width: 420px;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 40%;
+      justify-self: center;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent-soft);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ---------- BLURRED SECTION BASE ---------- */
+    .blur-section {
+      position: relative;
+      color: white;
+      min-height: 90vh;
+    }
+
+    .blur-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: blur(10px);
+      z-index: -2;
+    }
+
+    .blur-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
+    }
+
+    .blur-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about::before {
+      background-image: url('background.jpg');
+    }
+
+    .about img {
+      width: 380px;
+      height: 380px;
+      border-radius: 40%;
+      object-fit: cover;
+      justify-self: center;
+    }
+
+    /* ---------- TRAITS ---------- */
+    .traits {
+      background: var(--bg-light);
+    }
+
+    .traits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .trait-box {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .trait-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .trait-box h3 {
+      font-weight: 600;
+    }
+
+    /* ---------- HABITS ---------- */
+    .habits::before {
+      background-image: url('background2.jpg');
+    }
+
+    .habits ul {
+      max-width: 700px;
+      list-style: none;
+      padding: 0;
+    }
+
+    .habits li {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* ---------- INTERESTS ---------- */
+    .interests {
+      background: white;
+    }
+
+    .interest-categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .interest-category h3 {
+      font-weight: 600;
+      color: var(--accent-soft);
+      margin-bottom: 15px;
+    }
+
+    .interest-category ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .interest-category li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .interest-category li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent-soft);
+    }
+
+    /* ---------- LIFESTYLE ---------- */
+    .lifestyle {
+      background: var(--bg-dark);
+      color: white;
+    }
+
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .lifestyle-item {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 4px solid var(--bg-teal);
+    }
+
+    .lifestyle-item h3 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- COMPATIBILITY ---------- */
+    .compatibility {
+      background: var(--bg-teal);
+    }
+
+    .compat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .compat-column h3 {
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .compat-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .compat-column li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .yes-list li::before {
+      content: '✓ ';
+      color: #2d5f3f;
+      font-weight: bold;
+    }
+
+    .no-list li::before {
+      content: '✗ ';
+      color: #8b3a3a;
+      font-weight: bold;
+    }
+
+    /* ---------- VALUES ---------- */
+    .values::before {
+      background-image: url('background3.jpg');
+    }
+
+    .values-list {
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    .value-item {
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border-left: 4px solid var(--bg-teal);
+    }
+
+    .value-item h3 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    /* ---------- SCHEDULE ---------- */
+    .schedule {
+      background: white;
+    }
+
+    .schedule-table {
+      max-width: 800px;
+      margin: 40px auto;
+      background: var(--bg-light);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .schedule-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .schedule-row:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-time {
+      background: var(--bg-dark);
+      color: white;
+      padding: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .schedule-activity {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* ---------- PREFERENCES ---------- */
+    .preferences {
+      background: var(--bg-light);
+    }
+
+    .pref-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .pref-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .pref-card h3 {
+      font-weight: 600;
+      color: var(--accent-soft);
+      margin-bottom: 15px;
+    }
+
+    .pref-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 10px;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq {
+      background: white;
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .faq-item {
+      margin-bottom: 30px;
+      padding: 25px;
+      background: var(--bg-light);
+      border-radius: 12px;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--accent-soft);
+      margin-bottom: 10px;
+    }
+
+    .faq-answer {
+      color: var(--text-dark);
+    }
+
+    /* ---------- DEAL BREAKERS ---------- */
+    .dealbreakers::before {
+      background-image: url('background4.jpg');
+    }
+
+    .dealbreakers-content {
+      max-width: 700px;
+    }
+
+    .dealbreaker-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+
+    .dealbreaker-list li {
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      border-left: 4px solid #ff6b6b;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonials {
+      background: var(--bg-dark);
+      color: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .testimonial {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--bg-teal);
+    }
+
+    /* ---------- SHARED SPACE ---------- */
+    .shared-space {
+      background: var(--bg-teal);
+    }
+
+    .space-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .space-item {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .space-item h3 {
+      font-weight: 600;
+      color: var(--accent-soft);
+      margin-bottom: 15px;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact {
+      background: var(--bg-dark);
+      color: white;
+      text-align: center;
+    }
+
+    .contact p {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-methods {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      font-size: 0.8rem;
+      background: #000;
+      color: white;
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 900px) {
+      section {
+        padding: 60px 6vw;
+      }
+
+      .hero,
+      .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero img,
+      .about img {
+        width: 280px;
+        height: 280px;
+      }
+
+      .traits-grid,
+      .pref-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .interest-categories,
+      .lifestyle-grid,
+      .compat-grid,
+      .space-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .schedule-row {
+        grid-template-columns: 120px 1fr;
+      }
+
+      .schedule-time,
+      .schedule-activity {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Hi, I'm Naomi</h1>
+    <div class="title">College Student · Future Roommate</div>
+    <a href="#contact" class="btn">Contact Me</a>
+  </div>
+  <img src="portrait.jpg" alt="Naomi Natnael">
+</section>
+
+<!-- ABOUT -->
+<section class="blur-section about">
+  <div>
+    <h2>About Me <span style="font-size:0.8em">(she/her)</span></h2>
+    <p>
+      I'm Naomi Natnael, a college student who values balance, respect, and communication at home.
+      I believe a good living space should feel calm, supportive, and comfortable for everyone
+      sharing it. I'm currently studying at university and looking for a roommate who shares
+      similar values around cleanliness, communication, and mutual respect.
+    </p>
+    <p style="margin-top: 15px;">
+      Beyond being a responsible roommate, I'm someone who enjoys deep conversations, spontaneous
+      adventures, and creating a home environment that feels welcoming and positive.
+    </p>
+  </div>
+  <img src="about.jpg" alt="Naomi portrait">
+</section>
+
+<!-- TRAITS -->
+<section class="traits">
+  <h2>What I'm Like as a Roommate</h2>
+  <div class="traits-grid">
+    <div class="trait-box">
+      <h3>Respectful & Communicative</h3>
+      <p>I'm clear about boundaries, schedules, and expectations, and I value honest conversations.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Clean & Organized</h3>
+      <p>I keep shared spaces tidy and make sure messes never become someone else's problem.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Considerate & Calm</h3>
+      <p>I'm mindful of noise, guests, and routines, especially during busy school weeks.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Reliable & Trustworthy</h3>
+      <p>You can count on me to pay rent on time, honor agreements, and be there when needed.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Easygoing & Flexible</h3>
+      <p>I'm adaptable and open to compromise, making shared living smooth and stress-free.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Positive & Friendly</h3>
+      <p>I believe home should be a happy place, and I try to bring good energy to shared spaces.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HABITS -->
+<section class="blur-section habits">
+  <h2>Daily Living Habits</h2>
+  <ul>
+    <li>✔ Keeps a consistent sleep and study schedule</li>
+    <li>✔ Cleans up after cooking and shared meals</li>
+    <li>✔ Communicates plans in advance</li>
+    <li>✔ Respects shared quiet time</li>
+    <li>✔ Does dishes immediately after use</li>
+    <li>✔ Takes out trash on designated days</li>
+    <li>✔ Keeps personal items in own space</li>
+    <li>✔ Texts ahead when bringing guests over</li>
+  </ul>
+</section>
+
+<!-- INTERESTS -->
+<section class="interests">
+  <h2>Interests & Hobbies</h2>
+  <p style="max-width: 700px; margin: 0 auto;">
+    Getting to know your roommate's interests helps build connection. Here's what I enjoy in my free time:
+  </p>
+  <div class="interest-categories">
+    <div class="interest-category">
+      <h3>Creative Pursuits</h3>
+      <ul>
+        <li>Reading fiction and memoirs</li>
+        <li>Photography and visual arts</li>
+        <li>Writing and journaling</li>
+        <li>Exploring new music genres</li>
+      </ul>
+    </div>
+    <div class="interest-category">
+      <h3>Active & Outdoors</h3>
+      <ul>
+        <li>Hiking and nature walks</li>
+        <li>Yoga and meditation</li>
+        <li>Running and cycling</li>
+        <li>Weekend adventures</li>
+      </ul>
+    </div>
+    <div class="interest-category">
+      <h3>Social & Cultural</h3>
+      <ul>
+        <li>Trying new restaurants</li>
+        <li>Coffee shop explorations</li>
+        <li>Attending concerts and shows</li>
+        <li>Game nights with friends</li>
+      </ul>
+    </div>
+    <div class="interest-category">
+      <h3>Learning & Growth</h3>
+      <ul>
+        <li>Podcasts on various topics</li>
+        <li>Documentary films</li>
+        <li>Language learning</li>
+        <li>Personal development</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="lifestyle">
+  <h2>Lifestyle Overview</h2>
+  <div class="lifestyle-grid">
+    <div class="lifestyle-item">
+      <h3>🌙 Sleep Schedule</h3>
+      <p>I typically sleep from 11pm to 7am on weekdays, and might stay up a bit later on weekends. I'm quiet during nighttime hours and appreciate the same consideration.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>👥 Social Life</h3>
+      <p>I'm social but not a party person. I occasionally have friends over for meals or movies, always with advance notice. I value our home as a peaceful retreat.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>🍳 Cooking Habits</h3>
+      <p>I cook 4-5 times a week, usually simple and healthy meals. I'm happy to share meals occasionally and always clean as I go.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>🏃‍♀️ Routine</h3>
+      <p>I thrive on structure but remain flexible. My routine includes morning workouts, dedicated study time, and evening wind-down rituals.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>🎵 Noise Level</h3>
+      <p>I listen to music at moderate levels, usually with headphones during quiet hours. I'm sensitive to noise and appreciate mutual respect for sound levels.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>🧹 Cleaning Style</h3>
+      <p>I prefer to clean regularly rather than deep clean occasionally. I'm open to creating a shared cleaning schedule that works for both of us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPATIBILITY -->
+<section class="compatibility">
+  <h2>Compatibility Check</h2>
+  <p style="max-width: 700px; margin: 0 auto;">
+    We might be a great match if you identify with the "You'll Love Living With Me If..." list, 
+    and we might not be the best fit if the "We Might Not Click If..." resonates with you.
+  </p>
+  <div class="compat-grid">
+    <div class="compat-column">
+      <h3>You'll Love Living With Me If...</h3>
+      <ul class="yes-list">
+        <li>You value open communication</li>
+        <li>You keep shared spaces clean</li>
+        <li>You're respectful of boundaries</li>
+        <li>You like a calm home environment</li>
+        <li>You're reliable with bills and rent</li>
+        <li>You give heads up about guests</li>
+        <li>You appreciate mutual respect</li>
+        <li>You're okay with occasional social hangouts</li>
+      </ul>
+    </div>
+    <div class="compat-column">
+      <h3>We Might Not Click If...</h3>
+      <ul class="no-list">
+        <li>You frequently throw loud parties</li>
+        <li>You're very messy in shared areas</li>
+        <li>You avoid communication</li>
+        <li>You have irregular sleep that disrupts others</li>
+        <li>You're often late with bills</li>
+        <li>You bring guests without notice</li>
+        <li>You need complete solitude always</li>
+        <li>You smoke indoors</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="blur-section values">
+  <h2>Core Living Values</h2>
+  <div class="values-list">
+    <div class="value-item">
+      <h3>Mutual Respect</h3>
+      <p>I believe in treating shared spaces and each other's belongings, time, and boundaries with genuine respect. This foundation makes everything else easier.</p>
+    </div>
+    <div class="value-item">
+      <h3>Open Communication</h3>
+      <p>Issues are easier to solve when we talk about them early. I value direct, kind communication and am always open to feedback.</p>
+    </div>
+    <div class="value-item">
+      <h3>Shared Responsibility</h3>
+      <p>From cleaning to bills, I believe in splitting responsibilities fairly and holding up my end of agreements.</p>
+    </div>
+    <div class="value-item">
+      <h3>Personal Space</h3>
+      <p>While I enjoy friendly roommate interactions, I also deeply value having personal space and time to recharge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule">
+  <h2>Typical Weekly Schedule</h2>
+  <p style="max-width: 700px; margin: 0 auto 20px;">
+    Here's what a typical weekday looks like for me, so you know when I'm usually home:
+  </p>
+  <div class="schedule-table">
+    <div class="schedule-row">
+      <div class="schedule-time">6:30 - 8:00 AM</div>
+      <div class="schedule-activity">Morning routine, breakfast, getting ready</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">8:00 AM - 5:00 PM</div>
+      <div class="schedule-activity">Classes, library study sessions, campus activities</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">5:00 - 7:00 PM</div>
+      <div class="schedule-activity">Workout, errands, or relaxation time</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">7:00 - 9:00 PM</div>
+      <div class="schedule-activity">Dinner, cooking, catching up with friends</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">9:00 - 11:00 PM</div>
+      <div class="schedule-activity">Study time, personal projects, winding down</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">11:00 PM - 6:30 AM</div>
+      <div class="schedule-activity">Sleep (quiet hours appreciated!)</div>
+    </div>
+  </div>
+  <p style="max-width: 700px; margin: 20px auto 0; text-align: center; font-size: 0.9rem; opacity: 0.8;">
+    Weekends are more flexible, but I generally maintain similar sleep hours.
+  </p>
+</section>
+
+<!-- PREFERENCES -->
+<section class="preferences">
+  <h2>Living Preferences</h2>
+  <div class="pref-grid">
+    <div class="pref-card">
+      <h3>Temperature</h3>
+      <p>I prefer a comfortable range</p>
+      <div class="pref-value">68-72°F</div>
+    </div>
+    <div class="pref-card">
+      <h3>Cleanliness</h3>
+      <p>On a scale of 1-10</p>
+      <div class="pref-value">8/10</div>
+    </div>
+    <div class="pref-card">
+      <h3>Social Level</h3>
+      <p>Friendly but not always available</p>
+      <div class="pref-value">Moderate</div>
+    </div>
+    <div class="pref-card">
+      <h3>Guests</h3>
+      <p>Frequency per month</p>
+      <div class="pref-value">2-4 times</div>
+    </div>
+    <div class="pref-card">
+      <h3>Noise Level</h3>
+      <p>Preferred environment</p>
+      <div class="pref-value">Quiet</div>
+    </div>
+    <div class="pref-card">
+      <h3>Shared Meals</h3>
+      <p>How often I'm open to</p>
+      <div class="pref-value">Weekly</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Q: Are you okay with pets?</div>
+      <div class="faq-answer">A: I'm open to well-trained pets! I don't have any allergies, but I'd want to meet the pet first and discuss care responsibilities.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: How do you handle conflicts?</div>
+      <div class="faq-answer">A: I prefer addressing issues directly but kindly as they come up. I'm not confrontational, but I do believe in open communication rather than letting things fester.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: What's your policy on overnight guests?</div>
+      <div class="faq-answer">A: Occasional overnight guests are fine with advance notice (24 hours ideally). I'd expect the same courtesy and for guests to be respectful of shared spaces.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: Do you share groceries or keep them separate?</div>
+      <div class="faq-answer">A: I generally prefer keeping groceries separate to avoid confusion, but I'm open to sharing staples like oil, spices, and condiments if we both agree on it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: What's your cleaning schedule like?</div>
+      <div class="faq-answer">A: I do light cleaning throughout the week and deeper cleaning on weekends. I'm happy to create a shared chore chart so responsibilities are clear and fair.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: Are you okay with sharing streaming accounts or utilities?</div>
+      <div class="faq-answer">A: Absolutely! I think splitting streaming services and utilities is a great way to save money. I'm organized with finances and always pay my share on time.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEAL BREAKERS -->
+<section class="blur-section dealbreakers">
+  <h2>Important Deal Breakers</h2>
+  <div class="dealbreakers-content">
+    <p>
+      To be completely transparent, here are some things that would make our living situation difficult.
+      These aren't judgments—just incompatibilities that would affect both of our happiness:
+    </p>
+    <ul class="dealbreaker-list">
+      <li>Indoor smoking or vaping of any kind</li>
+      <li>Frequent loud parties or gatherings (weekly or more)</li>
+      <li>Consistent failure to clean up shared spaces</li>
+      <li>Not respecting quiet hours (11pm - 7am on weekdays)</li>
+      <li>Bringing strangers home regularly without notice</li>
+      <li>Unreliable with rent or bill payments</li>
+      <li>Disrespecting personal boundaries or privacy</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <h2>What Past Roommates Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <div class="testimonial-text">
+        "Naomi was the most considerate roommate I've had. She always communicated clearly and kept shared spaces clean. Would definitely room with her again!"
+      </div>
+      <div class="testimonial-author">— Sarah M., Freshman Year</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text">
+        "Super reliable and easygoing. Naomi was great about respecting boundaries while still being friendly. Our apartment always felt like a peaceful home."
+      </div>
+      <div class="testimonial-author">— Jessica T., Sophomore Year</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text">
+        "Living with Naomi was so stress-free. She's organized, respectful, and genuinely kind. I always knew I could count on her to be a good roommate."
+      </div>
+      <div class="testimonial-author">— Maya K., Summer Housing</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARED SPACE -->
+<section class="shared-space">
+  <h2>Shared Space Philosophy</h2>
+  <p style="max-width: 700px; margin: 0 auto;">
+    Here's how I think about common areas and what I hope we can build together:
+  </p>
+  <div class="space-grid">
+    <div class="space-item">
+      <h3>Kitchen</h3>
+      <p>I believe the kitchen should be a welcoming space where we both feel comfortable cooking. I'm organized about labeling food, cleaning immediately after use, and taking turns with deeper cleans like the fridge and oven.</p>
+    </div>
+    <div class="space-item">
+      <h3>Living Room</h3>
+      <p>This is our shared relaxation zone. I think it should reflect both our styles and be a place we both enjoy. I'm happy to coordinate on furniture, decor, and how we use the space.</p>
+    </div>
+    <div class="space-item">
+      <h3>Bathroom</h3>
+      <p>I keep my toiletries organized and wipe down surfaces after use. I'm mindful of time when getting ready and believe in keeping a cleaning schedule for this shared space.</p>
+    </div>
+    <div class="space-item">
+      <h3>General Atmosphere</h3>
+      <p>I hope we can create a space that feels calm, welcoming, and truly like home for both of us. I'm open to your ideas on how to make our place special!</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Let's Connect!</h2>
+  <p>
+    If you're looking for a reliable, respectful, and easygoing roommate,
+    I'd love to connect and see if we're a good fit. Feel free to reach out
+    through any of these methods:
+  </p>
+  <div class="contact-methods">
+    <a href="mailto:naomi@email.com" class="btn">Send Email</a>
+    <a href="#" class="btn btn-outline">Schedule a Call</a>
+    <a href="#" class="btn btn-outline">Message on Social</a>
+  </div>
+  <p style="margin-top: 40px; font-size: 0.9rem; opacity: 0.8;">
+    I'm happy to answer any questions, do a video chat, or meet for coffee to see if we'd be compatible.
+    Looking forward to hearing from you!
+  </p>
+</section>
+
+<footer>
+  © 2026 Naomi Natnael · Looking for Fall 2026 Housing
+</footer>
+
+</body>
+</html>
