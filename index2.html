@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naomi Natnael | Roommate Profile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #faf8f3;
+      --charcoal: #1a1a1a;
+      --sage: #8ba888;
+      --terracotta: #d4877c;
+      --olive: #6b7562;
+      --sand: #e8dfd2;
+      --ink: #2d2d2d;
+      --accent-glow: #c4a77d;
+    }
+
+    * { 
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* GRAIN TEXTURE */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    section {
+      position: relative;
+      padding: 10vh 8vw;
+      overflow: hidden;
+    }
+
+    /* DECORATIVE ACCENT */
+    .section-number {
+      position: absolute;
+      top: 5vh;
+      right: 5vw;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--olive);
+      opacity: 0.4;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--cream) 0%, var(--sand) 50%, #dfd3bf 100%);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 8vw;
+      align-items: center;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      animation: slideInLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .hero-label {
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 700;
+      line-height: 0.95;
+      margin-bottom: 2rem;
+      color: var(--charcoal);
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--olive);
+      margin-bottom: 3rem;
+      font-weight: 300;
+      max-width: 500px;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      animation: fadeInScale 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .hero-image-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: linear-gradient(135deg, var(--sage), var(--terracotta));
+      border-radius: 50% 40% 50% 40%;
+      z-index: -1;
+      opacity: 0.15;
+      animation: morph 8s ease-in-out infinite;
+    }
+
+    @keyframes morph {
+      0%, 100% { border-radius: 50% 40% 50% 40%; }
+      50% { border-radius: 40% 50% 40% 50%; }
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 450px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50% 45% 50% 45%;
+      box-shadow: 
+        0 20px 60px rgba(0,0,0,0.12),
+        0 0 0 1px rgba(107, 117, 98, 0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--charcoal);
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border: 2px solid var(--charcoal);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--sage);
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      transform: translateX(0);
+    }
+
+    .btn:hover {
+      border-color: var(--sage);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(139, 168, 136, 0.3);
+    }
+
+    /* SECTION HEADER STYLING */
+    .section-header {
+      margin-bottom: 5rem;
+      position: relative;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--charcoal);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), transparent);
+    }
+
+    .section-intro {
+      max-width: 700px;
+      font-size: 1.1rem;
+      color: var(--olive);
+      margin-top: 2rem;
+      line-height: 1.8;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10vw;
+      align-items: center;
+    }
+
+    .about-content p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 200px;
+      height: 200px;
+      background: var(--sage);
+      opacity: 0.15;
+      border-radius: 50%;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 40% 50% 45% 50%;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    }
+
+    /* TRAITS SECTION */
+    .traits {
+      background: var(--cream);
+    }
+
+    .traits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .trait-box {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 4px;
+      box-shadow: 
+        0 1px 3px rgba(0,0,0,0.06),
+        0 10px 40px rgba(0,0,0,0.04);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      border-top: 3px solid transparent;
+      position: relative;
+    }
+
+    .trait-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 4px;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--sage), var(--terracotta));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .trait-box:hover::before {
+      opacity: 1;
+    }
+
+    .trait-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 
+        0 2px 6px rgba(0,0,0,0.08),
+        0 20px 60px rgba(139, 168, 136, 0.15);
+    }
+
+    .trait-box h3 {
+      font-size: 1.4rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .trait-box p {
+      color: var(--olive);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* HABITS SECTION */
+    .habits {
+      background: var(--sand);
+      position: relative;
+    }
+
+    .habits::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(139, 168, 136, 0.08));
+      pointer-events: none;
+    }
+
+    .habits-list {
+      list-style: none;
+      max-width: 800px;
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .habits-list li {
+      padding: 1.5rem 2rem;
+      background: white;
+      border-radius: 4px;
+      border-left: 4px solid var(--sage);
+      font-size: 1rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+    }
+
+    .habits-list li:hover {
+      transform: translateX(8px);
+      border-left-color: var(--terracotta);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    /* INTERESTS SECTION */
+    .interests {
+      background: var(--cream);
+    }
+
+    .interest-categories {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem 6rem;
+      margin-top: 4rem;
+    }
+
+    .interest-category h3 {
+      font-size: 1.8rem;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .interest-category h3::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--terracotta);
+      border-radius: 50%;
+    }
+
+    .interest-category ul {
+      list-style: none;
+    }
+
+    .interest-category li {
+      padding: 0.7rem 0;
+      color: var(--olive);
+      font-size: 1rem;
+      padding-left: 2rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .interest-category li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--sage);
+      font-weight: 300;
+    }
+
+    .interest-category li:hover {
+      color: var(--charcoal);
+    }
+
+    /* LIFESTYLE SECTION */
+    .lifestyle {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .lifestyle-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .lifestyle-item {
+      background: rgba(255,255,255,0.03);
+      padding: 2.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+    }
+
+    .lifestyle-item:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(139, 168, 136, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .lifestyle-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--cream);
+    }
+
+    .lifestyle-item p {
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    /* COMPATIBILITY SECTION */
+    .compatibility {
+      background: linear-gradient(135deg, var(--sage) 0%, #7a9b7b 100%);
+      color: white;
+    }
+
+    .compat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 4rem;
+    }
+
+    .compat-column h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    .compat-column ul {
+      list-style: none;
+    }
+
+    .compat-column li {
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 0.8rem;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 4px;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .yes-list li {
+      border-left-color: rgba(255,255,255,0.6);
+    }
+
+    .yes-list li:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateX(5px);
+    }
+
+    .no-list li {
+      border-left-color: rgba(212, 135, 124, 0.7);
+    }
+
+    .no-list li:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* VALUES SECTION */
+    .values {
+      background: var(--sand);
+    }
+
+    .values-list {
+      max-width: 900px;
+      margin: 4rem auto 0;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .value-item {
+      background: white;
+      padding: 3rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-left: 6px solid var(--sage);
+      transition: all 0.4s ease;
+    }
+
+    .value-item:hover {
+      border-left-color: var(--terracotta);
+      transform: translateX(10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .value-item h3 {
+      font-size: 1.8rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .value-item p {
+      color: var(--olive);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    /* SCHEDULE SECTION */
+    .schedule {
+      background: var(--cream);
+    }
+
+    .schedule-table {
+      max-width: 900px;
+      margin: 4rem auto;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+
+    .schedule-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: background 0.3s ease;
+    }
+
+    .schedule-row:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-row:hover {
+      background: rgba(139, 168, 136, 0.04);
+    }
+
+    .schedule-time {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 2rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .schedule-activity {
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      color: var(--olive);
+      font-size: 1rem;
+    }
+
+    /* PREFERENCES SECTION */
+    .preferences {
+      background: var(--sand);
+    }
+
+    .pref-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .pref-card {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 4px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pref-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--sage), var(--terracotta));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .pref-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .pref-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .pref-card h3 {
+      font-size: 1.2rem;
+      color: var(--olive);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .pref-card p {
+      font-size: 0.85rem;
+      color: var(--olive);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .pref-value {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* FAQ SECTION */
+    .faq {
+      background: var(--cream);
+    }
+
+    .faq-list {
+      max-width: 900px;
+      margin: 4rem auto;
+    }
+
+    .faq-item {
+      margin-bottom: 2rem;
+      padding: 2.5rem 3rem;
+      background: white;
+      border-radius: 4px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .faq-item:hover {
+      border-left-color: var(--sage);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
+
+    .faq-question {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+
+    .faq-answer {
+      color: var(--olive);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* DEAL BREAKERS SECTION */
+    .dealbreakers {
+      background: var(--charcoal);
+      color: var(--cream);
+    }
+
+    .dealbreakers-content {
+      max-width: 800px;
+    }
+
+    .dealbreakers-content > p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+    }
+
+    .dealbreaker-list {
+      list-style: none;
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .dealbreaker-list li {
+      padding: 1.8rem 2rem;
+      background: rgba(255,255,255,0.04);
+      border-radius: 4px;
+      border-left: 4px solid var(--terracotta);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .dealbreaker-list li:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateX(-5px);
+    }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials {
+      background: linear-gradient(135deg, #d4877c 0%, #c07368 100%);
+      color: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .testimonial {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      padding: 3rem;
+      border-radius: 4px;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .testimonial:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.8;
+      opacity: 0.95;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      opacity: 0.9;
+    }
+
+    /* SHARED SPACE SECTION */
+    .shared-space {
+      background: var(--sand);
+    }
+
+    .space-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .space-item {
+      background: white;
+      padding: 3rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: all 0.4s ease;
+    }
+
+    .space-item:hover {
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      transform: translateY(-5px);
+    }
+
+    .space-item h3 {
+      font-size: 1.8rem;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+    }
+
+    .space-item p {
+      color: var(--olive);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* CONTACT SECTION */
+    .contact {
+      background: var(--charcoal);
+      color: var(--cream);
+      text-align: center;
+      padding: 12vh 8vw;
+    }
+
+    .contact h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 2rem;
+    }
+
+    .contact > p {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .contact-methods {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--cream);
+      color: var(--cream);
+    }
+
+    .btn-outline::before {
+      background: var(--sage);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--sage);
+    }
+
+    .contact-note {
+      margin-top: 4rem;
+      font-size: 0.95rem;
+      opacity: 0.7;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      background: #0f0f0f;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.05em;
+    }
+
+    /* SCROLL ANIMATIONS */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    /* MOBILE RESPONSIVENESS */
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .about-grid,
+      .compat-grid,
+      .interest-categories,
+      .space-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .traits-grid,
+      .lifestyle-grid,
+      .pref-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .habits-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+      }
+
+      section {
+        padding: 8vh 6vw;
+      }
+
+      .schedule-row {
+        grid-template-columns: 140px 1fr;
+      }
+
+      .schedule-time,
+      .schedule-activity {
+        padding: 1.5rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-label">Roommate Profile 2026</div>
+      <h1>Hi, I'm<br>Naomi</h1>
+      <div class="hero-subtitle">
+        College student seeking a mindful, respectful, 
+        and considerate living companion.
+      </div>
+      <a href="#contact" class="btn">Let's Connect</a>
+    </div>
+    <div class="hero-image-wrapper">
+      <img src="portrait.jpg" alt="Naomi Natnael">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <span class="section-number">01</span>
+  <div class="about-grid">
+    <div class="about-content">
+      <div class="section-header">
+        <h2>About Me</h2>
+      </div>
+      <p>
+        I'm Naomi Natnael (she/her), a college student who values balance, respect, and communication at home.
+        I believe a good living space should feel calm, supportive, and comfortable for everyone
+        sharing it.
+      </p>
+      <p>
+        Beyond being a responsible roommate, I'm someone who enjoys deep conversations, spontaneous
+        adventures, and creating a home environment that feels welcoming and positive. I'm currently
+        studying at university and looking forward to finding someone who shares similar values.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="about.jpg" alt="Naomi portrait">
+    </div>
+  </div>
+</section>
+
+<!-- TRAITS -->
+<section class="traits">
+  <span class="section-number">02</span>
+  <div class="section-header">
+    <h2>What I'm Like as a Roommate</h2>
+  </div>
+  <div class="traits-grid">
+    <div class="trait-box">
+      <h3>Respectful & Communicative</h3>
+      <p>I'm clear about boundaries, schedules, and expectations, and I value honest conversations.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Clean & Organized</h3>
+      <p>I keep shared spaces tidy and make sure messes never become someone else's problem.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Considerate & Calm</h3>
+      <p>I'm mindful of noise, guests, and routines, especially during busy school weeks.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Reliable & Trustworthy</h3>
+      <p>You can count on me to pay rent on time, honor agreements, and be there when needed.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Easygoing & Flexible</h3>
+      <p>I'm adaptable and open to compromise, making shared living smooth and stress-free.</p>
+    </div>
+    <div class="trait-box">
+      <h3>Positive & Friendly</h3>
+      <p>I believe home should be a happy place, and I try to bring good energy to shared spaces.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HABITS -->
+<section class="habits">
+  <span class="section-number">03</span>
+  <div class="section-header">
+    <h2>Daily Living Habits</h2>
+  </div>
+  <ul class="habits-list">
+    <li>✔ Keeps a consistent sleep and study schedule</li>
+    <li>✔ Cleans up after cooking and shared meals</li>
+    <li>✔ Communicates plans in advance</li>
+    <li>✔ Respects shared quiet time</li>
+    <li>✔ Does dishes immediately after use</li>
+    <li>✔ Takes out trash on designated days</li>
+    <li>✔ Keeps personal items in own space</li>
+    <li>✔ Texts ahead when bringing guests over</li>
+  </ul>
+</section>
+
+<!-- INTERESTS -->
+<section class="interests">
+  <span class="section-number">04</span>
+  <div class="section-header">
+    <h2>Interests & Hobbies</h2>
+    <p class="section-intro">
+      Getting to know your roommate's interests helps build connection. Here's what I enjoy in my free time.
+    </p>
+  </div>
+  <div class="interest-categories">
+    <div class="interest-category">
+      <h3>Creative Pursuits</h3>
+      <ul>
+        <li>Reading fiction and memoirs</li>
+        <li>Photography and visual arts</li>
+        <li>Writing and journaling</li>
+        <li>Exploring new music genres</li>
+      </ul>
+    </div>
+    <div class="interest-category">
+      <h3>Active & Outdoors</h3>
+      <ul>
+        <li>Hiking and nature walks</li>
+        <li>Yoga and meditation</li>
+        <li>Running and cycling</li>
+        <li>Weekend adventures</li>
+      </ul>
+    </div>
+    <div class="interest-category">
+      <h3>Social & Cultural</h3>
+      <ul>
+        <li>Trying new restaurants</li>
+        <li>Coffee shop explorations</li>
+        <li>Attending concerts and shows</li>
+        <li>Game nights with friends</li>
+      </ul>
+    </div>
+    <div class="interest-category">
+      <h3>Learning & Growth</h3>
+      <ul>
+        <li>Podcasts on various topics</li>
+        <li>Documentary films</li>
+        <li>Language learning</li>
+        <li>Personal development</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE -->
+<section class="lifestyle">
+  <span class="section-number">05</span>
+  <div class="section-header">
+    <h2>Lifestyle Overview</h2>
+  </div>
+  <div class="lifestyle-grid">
+    <div class="lifestyle-item">
+      <h3>🌙 Sleep Schedule</h3>
+      <p>I typically sleep from 11pm to 7am on weekdays, and might stay up a bit later on weekends. I'm quiet during nighttime hours and appreciate the same consideration.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>👥 Social Life</h3>
+      <p>I'm social but not a party person. I occasionally have friends over for meals or movies, always with advance notice. I value our home as a peaceful retreat.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>🍳 Cooking Habits</h3>
+      <p>I cook 4-5 times a week, usually simple and healthy meals. I'm happy to share meals occasionally and always clean as I go.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>🏃‍♀️ Routine</h3>
+      <p>I thrive on structure but remain flexible. My routine includes morning workouts, dedicated study time, and evening wind-down rituals.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>🎵 Noise Level</h3>
+      <p>I listen to music at moderate levels, usually with headphones during quiet hours. I'm sensitive to noise and appreciate mutual respect for sound levels.</p>
+    </div>
+    <div class="lifestyle-item">
+      <h3>🧹 Cleaning Style</h3>
+      <p>I prefer to clean regularly rather than deep clean occasionally. I'm open to creating a shared cleaning schedule that works for both of us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPATIBILITY -->
+<section class="compatibility">
+  <span class="section-number">06</span>
+  <div class="section-header">
+    <h2>Compatibility Check</h2>
+    <p class="section-intro">
+      We might be a great match if you identify with the first list, 
+      and we might not be the best fit if the second resonates with you.
+    </p>
+  </div>
+  <div class="compat-grid">
+    <div class="compat-column">
+      <h3>You'll Love Living With Me If...</h3>
+      <ul class="yes-list">
+        <li>You value open communication</li>
+        <li>You keep shared spaces clean</li>
+        <li>You're respectful of boundaries</li>
+        <li>You like a calm home environment</li>
+        <li>You're reliable with bills and rent</li>
+        <li>You give heads up about guests</li>
+        <li>You appreciate mutual respect</li>
+        <li>You're okay with occasional social hangouts</li>
+      </ul>
+    </div>
+    <div class="compat-column">
+      <h3>We Might Not Click If...</h3>
+      <ul class="no-list">
+        <li>You frequently throw loud parties</li>
+        <li>You're very messy in shared areas</li>
+        <li>You avoid communication</li>
+        <li>You have irregular sleep that disrupts others</li>
+        <li>You're often late with bills</li>
+        <li>You bring guests without notice</li>
+        <li>You need complete solitude always</li>
+        <li>You smoke indoors</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values">
+  <span class="section-number">07</span>
+  <div class="section-header">
+    <h2>Core Living Values</h2>
+  </div>
+  <div class="values-list">
+    <div class="value-item">
+      <h3>Mutual Respect</h3>
+      <p>I believe in treating shared spaces and each other's belongings, time, and boundaries with genuine respect. This foundation makes everything else easier.</p>
+    </div>
+    <div class="value-item">
+      <h3>Open Communication</h3>
+      <p>Issues are easier to solve when we talk about them early. I value direct, kind communication and am always open to feedback.</p>
+    </div>
+    <div class="value-item">
+      <h3>Shared Responsibility</h3>
+      <p>From cleaning to bills, I believe in splitting responsibilities fairly and holding up my end of agreements.</p>
+    </div>
+    <div class="value-item">
+      <h3>Personal Space</h3>
+      <p>While I enjoy friendly roommate interactions, I also deeply value having personal space and time to recharge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule">
+  <span class="section-number">08</span>
+  <div class="section-header">
+    <h2>Typical Weekly Schedule</h2>
+    <p class="section-intro">
+      Here's what a typical weekday looks like for me, so you know when I'm usually home.
+    </p>
+  </div>
+  <div class="schedule-table">
+    <div class="schedule-row">
+      <div class="schedule-time">6:30 - 8:00 AM</div>
+      <div class="schedule-activity">Morning routine, breakfast, getting ready</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">8:00 AM - 5:00 PM</div>
+      <div class="schedule-activity">Classes, library study sessions, campus activities</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">5:00 - 7:00 PM</div>
+      <div class="schedule-activity">Workout, errands, or relaxation time</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">7:00 - 9:00 PM</div>
+      <div class="schedule-activity">Dinner, cooking, catching up with friends</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">9:00 - 11:00 PM</div>
+      <div class="schedule-activity">Study time, personal projects, winding down</div>
+    </div>
+    <div class="schedule-row">
+      <div class="schedule-time">11:00 PM - 6:30 AM</div>
+      <div class="schedule-activity">Sleep (quiet hours appreciated!)</div>
+    </div>
+  </div>
+</section>
+
+<!-- PREFERENCES -->
+<section class="preferences">
+  <span class="section-number">09</span>
+  <div class="section-header">
+    <h2>Living Preferences</h2>
+  </div>
+  <div class="pref-grid">
+    <div class="pref-card">
+      <h3>Temperature</h3>
+      <p>I prefer a comfortable range</p>
+      <div class="pref-value">68-72°F</div>
+    </div>
+    <div class="pref-card">
+      <h3>Cleanliness</h3>
+      <p>On a scale of 1-10</p>
+      <div class="pref-value">8/10</div>
+    </div>
+    <div class="pref-card">
+      <h3>Social Level</h3>
+      <p>Friendly but not always available</p>
+      <div class="pref-value">Moderate</div>
+    </div>
+    <div class="pref-card">
+      <h3>Guests</h3>
+      <p>Frequency per month</p>
+      <div class="pref-value">2-4 times</div>
+    </div>
+    <div class="pref-card">
+      <h3>Noise Level</h3>
+      <p>Preferred environment</p>
+      <div class="pref-value">Quiet</div>
+    </div>
+    <div class="pref-card">
+      <h3>Shared Meals</h3>
+      <p>How often I'm open to</p>
+      <div class="pref-value">Weekly</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <span class="section-number">10</span>
+  <div class="section-header">
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">Q: Are you okay with pets?</div>
+      <div class="faq-answer">A: I'm open to well-trained pets! I don't have any allergies, but I'd want to meet the pet first and discuss care responsibilities.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: How do you handle conflicts?</div>
+      <div class="faq-answer">A: I prefer addressing issues directly but kindly as they come up. I'm not confrontational, but I do believe in open communication rather than letting things fester.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: What's your policy on overnight guests?</div>
+      <div class="faq-answer">A: Occasional overnight guests are fine with advance notice (24 hours ideally). I'd expect the same courtesy and for guests to be respectful of shared spaces.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: Do you share groceries or keep them separate?</div>
+      <div class="faq-answer">A: I generally prefer keeping groceries separate to avoid confusion, but I'm open to sharing staples like oil, spices, and condiments if we both agree on it.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: What's your cleaning schedule like?</div>
+      <div class="faq-answer">A: I do light cleaning throughout the week and deeper cleaning on weekends. I'm happy to create a shared chore chart so responsibilities are clear and fair.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Q: Are you okay with sharing streaming accounts or utilities?</div>
+      <div class="faq-answer">A: Absolutely! I think splitting streaming services and utilities is a great way to save money. I'm organized with finances and always pay my share on time.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEAL BREAKERS -->
+<section class="dealbreakers">
+  <span class="section-number">11</span>
+  <div class="section-header">
+    <h2>Important Deal Breakers</h2>
+  </div>
+  <div class="dealbreakers-content">
+    <p>
+      To be completely transparent, here are some things that would make our living situation difficult.
+      These aren't judgments—just incompatibilities that would affect both of our happiness.
+    </p>
+    <ul class="dealbreaker-list">
+      <li>Indoor smoking or vaping of any kind</li>
+      <li>Frequent loud parties or gatherings (weekly or more)</li>
+      <li>Consistent failure to clean up shared spaces</li>
+      <li>Not respecting quiet hours (11pm - 7am on weekdays)</li>
+      <li>Bringing strangers home regularly without notice</li>
+      <li>Unreliable with rent or bill payments</li>
+      <li>Disrespecting personal boundaries or privacy</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <span class="section-number">12</span>
+  <div class="section-header">
+    <h2>What Past Roommates Say</h2>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <div class="testimonial-text">
+        "Naomi was the most considerate roommate I've had. She always communicated clearly and kept shared spaces clean. Would definitely room with her again!"
+      </div>
+      <div class="testimonial-author">— Sarah M., Freshman Year</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text">
+        "Super reliable and easygoing. Naomi was great about respecting boundaries while still being friendly. Our apartment always felt like a peaceful home."
+      </div>
+      <div class="testimonial-author">— Jessica T., Sophomore Year</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-text">
+        "Living with Naomi was so stress-free. She's organized, respectful, and genuinely kind. I always knew I could count on her to be a good roommate."
+      </div>
+      <div class="testimonial-author">— Maya K., Summer Housing</div>
+    </div>
+  </div>
+</section>
+
+<!-- SHARED SPACE -->
+<section class="shared-space">
+  <span class="section-number">13</span>
+  <div class="section-header">
+    <h2>Shared Space Philosophy</h2>
+    <p class="section-intro">
+      Here's how I think about common areas and what I hope we can build together.
+    </p>
+  </div>
+  <div class="space-grid">
+    <div class="space-item">
+      <h3>Kitchen</h3>
+      <p>I believe the kitchen should be a welcoming space where we both feel comfortable cooking. I'm organized about labeling food, cleaning immediately after use, and taking turns with deeper cleans like the fridge and oven.</p>
+    </div>
+    <div class="space-item">
+      <h3>Living Room</h3>
+      <p>This is our shared relaxation zone. I think it should reflect both our styles and be a place we both enjoy. I'm happy to coordinate on furniture, decor, and how we use the space.</p>
+    </div>
+    <div class="space-item">
+      <h3>Bathroom</h3>
+      <p>I keep my toiletries organized and wipe down surfaces after use. I'm mindful of time when getting ready and believe in keeping a cleaning schedule for this shared space.</p>
+    </div>
+    <div class="space-item">
+      <h3>General Atmosphere</h3>
+      <p>I hope we can create a space that feels calm, welcoming, and truly like home for both of us. I'm open to your ideas on how to make our place special!</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Let's Connect!</h2>
+  <p>
+    If you're looking for a reliable, respectful, and easygoing roommate,
+    I'd love to connect and see if we're a good fit. Feel free to reach out
+    through any of these methods:
+  </p>
+  <div class="contact-methods">
+    <a href="mailto:naomi@email.com" class="btn">Send Email</a>
+    <a href="#" class="btn btn-outline">Schedule a Call</a>
+    <a href="#" class="btn btn-outline">Message on Social</a>
+  </div>
+  <p class="contact-note">
+    I'm happy to answer any questions, do a video chat, or meet for coffee to see if we'd be compatible.
+    Looking forward to hearing from you!
+  </p>
+</section>
+
+<footer>
+  © 2026 Naomi Natnael · Looking for Fall 2026 Housing
+</footer>
+
+</body>
+</html>
