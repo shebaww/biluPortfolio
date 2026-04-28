@@ -21,7 +21,7 @@ The site is designed to address three audiences simultaneously:
 
 ## 🚀 Live Demo
 
-[View the live portfolio](https://YOUR_USERNAME.github.io/REPO_NAME/)
+[View the live portfolio](https://shebaww.github.io/biluPortfolio/)
 
 ## 🛠️ Built With
 
@@ -78,8 +78,8 @@ python -m http.server 8000
 npx serve .
 ```
 
-🌐 Deployment
-GitHub Pages (Recommended)
+### 🌐 Deployment
+**GitHub Pages (Recommended)**
 Push your code to a GitHub repository
 
 Go to Settings → Pages
@@ -87,13 +87,6 @@ Go to Settings → Pages
 Set source to main branch / (root)
 
 Your site will be live at https://YOUR_USERNAME.github.io/REPO_NAME/
-
-Alternative Hosting
-Netlify - Drag and drop folder
-
-Vercel - Connect GitHub repo
-
-Any static hosting - Just upload the index.html and public/ folder
 
 📧 Contact
 Naomi Teklemariam
