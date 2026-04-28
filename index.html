@@ -19,16 +19,16 @@
       --accent-pink: #ffafbd;
       --accent-blue: #a8c0ff;
       --accent-purple: #e2d1f9;
-      --glass-bg: rgba(255, 255, 255, 0.4);
+      --glass-bg: rgba(255, 255, 255, 0.45);
       --glass-border: rgba(255, 255, 255, 0.6);
       --text-dark: #1c2b3a;
       --text-mid: #4a5568;
-      --card-radius: 35px;
+      --card-radius: 40px;
       --pill-radius: 100px;
       --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
       
-      /* Zoom out adjustments */
-      font-size: 15px; /* Base font size reduction */
+      /* Global Zoom Out */
+      font-size: 15px; 
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -69,15 +69,15 @@
       position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%);
       width: calc(100% - 4rem); max-width: 1050px; z-index: 1000;
       background: var(--glass-bg); backdrop-filter: blur(30px);
-      border: 1px solid var(--glass-border); padding: 0.7rem 2.2rem;
+      border: 1px solid var(--glass-border); padding: 0.8rem 2.5rem;
       border-radius: var(--pill-radius); display: flex; align-items: center; justify-content: space-between;
       box-shadow: 0 10px 40px rgba(0,0,0,0.02);
     }
-    .nav-logo { font-size: 1.2rem; font-weight: 900; text-decoration: none; color: var(--text-dark); letter-spacing: -0.01em; }
-    .nav-links { display: flex; gap: 0.4rem; list-style: none; }
+    .nav-logo { font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text-dark); }
+    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
     .nav-links a {
-      text-decoration: none; color: var(--text-dark); font-size: 0.7rem; font-weight: 700;
-      text-transform: uppercase; padding: 0.5rem 1.2rem; border-radius: var(--pill-radius);
+      text-decoration: none; color: var(--text-dark); font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; padding: 0.6rem 1.4rem; border-radius: var(--pill-radius);
       transition: var(--transition); opacity: 0.6;
     }
     .nav-links a:hover { opacity: 1; background: rgba(255,255,255,0.7); }
@@ -85,106 +85,112 @@
     /* ─── HERO ─────────────────────────────────────── */
     .hero {
       min-height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem;
+      align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem;
       position: relative;
     }
     .hero-badge {
-      background: #fff; padding: 0.5rem 1.5rem; border-radius: var(--pill-radius);
-      font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em;
-      margin: 2rem 0; box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+      background: #fff; padding: 0.6rem 1.8rem; border-radius: var(--pill-radius);
+      font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em;
+      margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.03);
     }
-    .hero-name { font-size: clamp(3.5rem, 12vw, 8.5rem); margin-bottom: 1rem; color: var(--text-dark); line-height: 0.85; }
-    .hero-sub { font-size: 1.2rem; font-weight: 400; opacity: 0.5; margin-bottom: 3.5rem; max-width: 700px; font-family: 'Playfair Display', serif; }
+    .hero-name { font-size: clamp(3.5rem, 12vw, 9.5rem); margin-bottom: 1rem; color: var(--text-dark); line-height: 0.85; }
+    .hero-sub { font-size: 1.3rem; font-weight: 400; opacity: 0.6; margin-bottom: 3.5rem; max-width: 750px; font-family: 'Playfair Display', serif; }
     
     .hero-image-wrap {
-      position: relative; width: 100%; max-width: 400px; height: 450px; margin-bottom: 3rem;
-      border-radius: 50px; overflow: hidden; border: 8px solid #fff;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.1); transform: rotate(-2deg);
+      position: relative; width: 100%; max-width: 420px; height: 480px; margin-bottom: 3rem;
+      border-radius: 50px; overflow: hidden; border: 10px solid #fff;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.12); transform: rotate(-2deg);
       background: url('public/assets/hero.JPG') center/cover;
     }
 
     /* ─── SECTIONS ─────────────────────────────────── */
-    section { padding: 8rem 2rem; max-width: 1200px; margin: 0 auto; }
-    .section-header { text-align: center; margin-bottom: 5rem; }
-    .section-title { font-size: clamp(2.5rem, 7vw, 5rem); margin-bottom: 1.2rem; }
+    section { padding: 10rem 2rem; max-width: 1250px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 6rem; }
+    .section-title { font-size: clamp(3rem, 8vw, 6rem); margin-bottom: 1.5rem; }
     
     .glass-card {
-      background: var(--glass-bg); backdrop-filter: blur(35px); border: 1px solid var(--glass-border);
-      border-radius: var(--card-radius); padding: 3.5rem; box-shadow: 0 20px 60px rgba(0,0,0,0.03);
+      background: var(--glass-bg); backdrop-filter: blur(40px); border: 1px solid var(--glass-border);
+      border-radius: var(--card-radius); padding: 4rem; box-shadow: 0 30px 70px rgba(0,0,0,0.04);
       transition: var(--transition);
+      position: relative; overflow: hidden;
     }
-    .glass-card:hover { transform: translateY(-8px); background: rgba(255,255,255,0.6); }
+    .glass-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.6); }
 
     /* ─── ABOUT ────────────────────────────────────── */
-    .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
-    .about-text p { margin-bottom: 1.8rem; font-size: 1.1rem; color: var(--text-mid); }
+    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: center; }
+    .about-text p { margin-bottom: 2rem; font-size: 1.15rem; color: var(--text-mid); }
     .about-image {
-      width: 100%; aspect-ratio: 4/5; border-radius: 40px; overflow: hidden;
-      border: 8px solid #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+      width: 100%; aspect-ratio: 4/5; border-radius: 45px; overflow: hidden;
+      border: 10px solid #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.08);
       background: url('public/assets/hero-2.JPG') center/cover;
       transform: rotate(2deg);
     }
 
     .fast-facts {
-      margin-top: 3rem; background: #fff; border-radius: 30px; padding: 2.5rem;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.02);
+      margin-top: 3rem; background: #fff; border-radius: 35px; padding: 3rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.02);
     }
-    .fact-item { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #f9f9f9; }
-    .fact-label { font-weight: 800; color: var(--accent-blue); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .fact-item { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid #f8f8f8; }
+    .fact-label { font-weight: 800; color: var(--accent-blue); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
     .fact-value { font-weight: 600; font-family: 'Playfair Display', serif; }
 
     /* ─── PILLARS ──────────────────────────────────── */
-    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .pillar-card { text-align: center; padding: 3rem 1.5rem; }
-    .pillar-icon { font-size: 4rem; display: block; margin-bottom: 1.5rem; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .pillar-card { text-align: center; padding: 4rem 2rem; }
+    .pillar-icon { font-size: 5rem; display: block; margin-bottom: 2rem; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); }
 
     /* ─── THEORY ───────────────────────────────────── */
-    .theory-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start; }
+    .theory-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
     .theory-image {
       width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden;
-      border: 8px solid #fff; box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 10px solid #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.1);
       background: url('public/assets/IMG_6520.JPG') center/cover;
     }
-    .theory-item { margin-bottom: 2.5rem; }
-    .theory-item h3 { font-size: 1.6rem; margin-bottom: 0.8rem; font-family: 'Playfair Display', serif; }
-    .theory-tag { font-weight: 900; font-size: 0.7rem; color: var(--accent-pink); text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+    .theory-item { margin-bottom: 3.5rem; }
+    .theory-item h3 { font-size: 1.8rem; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+    .theory-tag { font-weight: 900; font-size: 0.75rem; color: var(--accent-pink); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
 
     /* ─── STRENGTHS ────────────────────────────────── */
-    .strengths-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .strengths-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    .strength-card h3 { font-size: 1.8rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; }
 
     /* ─── SKILLS ───────────────────────────────────── */
-    .skill-card { margin-bottom: 1.5rem; padding: 3rem; position: relative; }
-    .skill-num { font-size: 4rem; font-weight: 900; opacity: 0.04; position: absolute; right: 2.5rem; top: 1.5rem; }
+    .skills-grid { display: grid; gap: 2rem; }
+    .skill-card { padding: 4rem; position: relative; }
+    .skill-num { font-size: 5rem; font-weight: 900; opacity: 0.04; position: absolute; right: 3rem; top: 2rem; }
 
     /* ─── RESOURCES ────────────────────────────────── */
-    .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .res-card { text-decoration: none; color: inherit; padding: 2.5rem; border-radius: 35px; }
+    .res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .res-card { text-decoration: none; color: inherit; padding: 3rem; border-radius: 40px; display: flex; flex-direction: column; }
+    .res-link { font-weight: 800; font-size: 0.8rem; color: var(--accent-purple); text-transform: uppercase; margin-top: auto; padding-top: 2rem; }
 
     /* ─── VISION ───────────────────────────────────── */
     .vision-container {
-      background: var(--text-dark); color: #fff; border-radius: 70px; padding: 7rem 3rem; text-align: center;
+      background: var(--text-dark); color: #fff; border-radius: 80px; padding: 9rem 4rem; text-align: center;
+      position: relative; overflow: hidden;
     }
     .vision-photo {
-      width: 180px; height: 180px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.1);
-      margin: 0 auto 3rem; overflow: hidden; background: url('public/assets/IMG_6555.JPG') center/cover;
+      width: 220px; height: 220px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.1);
+      margin: 0 auto 4rem; overflow: hidden; background: url('public/assets/IMG_6555.JPG') center/cover;
     }
-    .vision-quote { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5vw, 3rem); font-style: italic; margin-bottom: 3rem; line-height: 1.2; }
+    .vision-quote { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 3.8rem); font-style: italic; margin-bottom: 4rem; line-height: 1.2; }
 
     /* ─── BUTTONS ──────────────────────────────────── */
     .btn {
-      padding: 1rem 2.2rem; border-radius: var(--pill-radius); text-decoration: none;
-      font-size: 0.85rem; font-weight: 800; text-transform: uppercase; transition: var(--transition);
+      padding: 1.2rem 2.8rem; border-radius: var(--pill-radius); text-decoration: none;
+      font-size: 0.9rem; font-weight: 800; text-transform: uppercase; transition: var(--transition);
       display: inline-block; cursor: pointer; border: none;
     }
     .btn-primary { background: linear-gradient(135deg, #1c2b3a 0%, #3e5871 100%); color: #fff; }
-    .btn-primary:hover { transform: scale(1.05); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+    .btn-primary:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 
     /* ─── FOOTER ───────────────────────────────────── */
-    footer { padding: 6rem 2rem; text-align: center; }
-    .footer-logo { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; }
+    footer { padding: 8rem 2rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.03); }
+    .footer-logo { font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; letter-spacing: -0.05em; }
 
-    /* Animations Base */
-    .gsap-reveal { opacity: 0; visibility: hidden; }
+    /* GSAP Reveal Targets */
+    .gsap-reveal { opacity: 0; pointer-events: none; }
+    .stagger-reveal { opacity: 0; pointer-events: none; }
 
     @media (max-width: 1000px) {
       .about-grid, .theory-grid { grid-template-columns: 1fr; }
@@ -211,7 +217,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#resources">Support</a></li>
     </ul>
-    <div class="fancy-serif" style="font-size: 1rem; opacity: 0.5;">Est. 2026</div>
+    <div class="fancy-serif" style="font-size: 1.1rem; opacity: 0.6;">Est. 2026</div>
   </nav>
 
   <header class="hero">
@@ -220,15 +226,15 @@
     <h1 class="hero-name gsap-reveal">Naomi <span class="fancy-serif">Teklemariam</span></h1>
     <p class="hero-sub gsap-reveal">Bridge Builder. Future Leader. <span class="curly-accent">And part-time baker.</span></p>
     <div class="hero-cta gsap-reveal">
-      <a href="#about" class="btn btn-primary">Enter My World</a>
+      <a href="#about" class="btn btn-primary">Explore Portfolio</a>
     </div>
   </header>
 
   <section id="about">
     <div class="about-grid">
       <div class="about-text glass-card gsap-reveal">
-        <h2 class="section-title">The <span class="fancy-serif">Energy</span>.</h2>
-        <p>Hi! I'm <strong>Naomi Teklemariam</strong> (she/her), your RA for this upcoming year, and I'm excited to meet you. I'm from <strong>Addis Ababa, Ethiopia</strong> — home and family mean everything to me, so I understand how difficult it is to be so far away from home.</p>
+        <h2 class="section-title" style="text-align:left;">The <span class="fancy-serif">Energy</span>.</h2>
+        <p>Hi! I'm <strong>Naomi Teklemariam</strong> (she/her), your RA for this upcoming year, and I'm excited to meet you. I'm from <strong>Addis Ababa, Ethiopia</strong> — home and family mean everything to me, so I understand how difficult it is to be so far away from home. Whenever you're feeling homesick, I'm always here for you.</p>
         <p>As a member of the African Student Association and a Senator in the Student Government Association, I'm actively involved on campus. I'm a Political Science major pursuing a minor in Legal Studies and a certificate in African Sustainability and Development.</p>
         <p>You can think of me as <strong>Mike Ross</strong>, just a bit more forgetful! Some of my favourite pastimes include reading, painting, and baking. If you're lucky, you might get to try one of my sweet treats.</p>
         <p>I'm really looking forward to getting to know every one of you. Whether it's through one-on-one meetings or late-night chats, I can't wait to make you feel like Penn State is home away from home.</p>
@@ -236,7 +242,7 @@
       <div class="gsap-reveal">
         <div class="about-image"></div>
         <div class="fast-facts">
-          <h3 style="margin-bottom: 2rem; font-size: 1.4rem; letter-spacing: -0.02em;">Quick Hits</h3>
+          <h3 style="margin-bottom: 2rem; font-size: 1.6rem; letter-spacing: -0.02em;">Quick Hits</h3>
           <div class="fact-item"><span class="fact-label">Hometown</span> <span class="fact-value">Addis Ababa, ET</span></div>
           <div class="fact-item"><span class="fact-label">Major</span> <span class="fact-value">Political Science</span></div>
           <div class="fact-item"><span class="fact-label">Minor</span> <span class="fact-value">Legal Studies</span></div>
@@ -249,20 +255,20 @@
   <section id="role">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">What is an <span class="fancy-serif">RA</span>?</h2>
-      <p style="max-width: 800px; margin: 0 auto; opacity: 0.6; font-size: 1.1rem;">"A Resident Assistant is a trained peer and residence life staff member tasked with fostering an inclusive community and helping students adjust to college life."</p>
+      <p style="max-width: 900px; margin: 0 auto; opacity: 0.6; font-size: 1.2rem; font-family: 'Playfair Display', serif;">"A trained peer and residence life staff member tasked with fostering an inclusive community and helping students adjust to college life."</p>
     </div>
     <div class="pillars-grid">
-      <div class="pillar-card glass-card gsap-reveal">
+      <div class="pillar-card glass-card stagger-reveal">
         <span class="pillar-icon">🌉</span>
         <h3>Bridge Builder</h3>
         <p>Connecting students to resources, support systems, and the institution.</p>
       </div>
-      <div class="pillar-card glass-card gsap-reveal">
+      <div class="pillar-card glass-card stagger-reveal">
         <span class="pillar-icon">🤝</span>
         <h3>Peer First</h3>
         <p>I'm a student too. I understand your perspective and respond accordingly.</p>
       </div>
-      <div class="pillar-card glass-card gsap-reveal">
+      <div class="pillar-card glass-card stagger-reveal">
         <span class="pillar-icon">🏠</span>
         <h3>Community Creator</h3>
         <p>Making the residence hall feel like a genuine home away from home.</p>
@@ -275,22 +281,22 @@
       <div class="theory-image gsap-reveal"></div>
       <div class="theory-content">
         <h2 class="section-title gsap-reveal" style="text-align:left;">The <span class="fancy-serif">Blueprint</span>.</h2>
-        <p class="gsap-reveal" style="margin-bottom: 3rem; font-size: 1.1rem; opacity: 0.7;">Learning about Student Development Theories has fundamentally shaped the way I approach my role.</p>
+        <p class="gsap-reveal" style="margin-bottom: 4rem; font-size: 1.2rem; opacity: 0.7;">Learning about Student Development Theories has fundamentally shaped the way I approach my role.</p>
         
         <div class="theory-item gsap-reveal">
           <span class="theory-tag">Alexander Astin</span>
           <h3>Involvement Theory</h3>
-          <p>Time and energy invested directly impacts development. I tailor programs to residents' actual interests.</p>
+          <p>Time and energy invested directly impacts development. I tailor programs to residents' actual interests—not just what's convenient.</p>
         </div>
         <div class="theory-item gsap-reveal">
           <span class="theory-tag">Baxter Magolda</span>
           <h3>Self-Authorship Theory</h3>
-          <p>Developing one's own identity. I guide residents through moments of self-discovery.</p>
+          <p>Developing one's own identity. I guide residents through moments of self-discovery and internal guidance.</p>
         </div>
         <div class="theory-item gsap-reveal">
           <span class="theory-tag">Vincent Tinto</span>
           <h3>Retention Theory</h3>
-          <p>Integration is key. By organizing Community Builder events, I ensure every student feels they belong.</p>
+          <p>Integration is key. By organizing Community Builder events, I apply this theory to ensure every student feels they belong.</p>
         </div>
       </div>
     </div>
@@ -299,24 +305,24 @@
   <section id="strengths">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">My <span class="fancy-serif">Aura</span>.</h2>
-      <p style="opacity: 0.6;">Based on CliftonStrengths results.</p>
+      <p style="opacity: 0.6; font-size: 1.1rem;">Based on CliftonStrengths — how I show up for the floor.</p>
     </div>
     <div class="strengths-grid">
-      <div class="strength-card glass-card gsap-reveal">
+      <div class="strength-card glass-card stagger-reveal">
         <h3>Strategic</h3>
-        <p>I naturally look for patterns and think steps ahead to find the right path forward.</p>
+        <p>I naturally look for patterns and think steps ahead to find the right path forward for my residents.</p>
       </div>
-      <div class="strength-card glass-card gsap-reveal">
+      <div class="strength-card glass-card stagger-reveal">
         <h3>Positivity</h3>
-        <p>I encourage people and keep morale up, especially during stressful periods.</p>
+        <p>I encourage people and keep morale up, especially during stressful periods like midterms or finals.</p>
       </div>
-      <div class="strength-card glass-card gsap-reveal" style="background: var(--text-dark); color: #fff;">
+      <div class="strength-card glass-card stagger-reveal" style="background: var(--text-dark); color: #fff;">
         <h3>Futuristic</h3>
-        <p>Motivated by the bigger picture, reminding residents that difficult moments are temporary.</p>
+        <p>Motivated by the bigger picture, reminding residents that difficult moments are always temporary.</p>
       </div>
-      <div class="strength-card glass-card gsap-reveal">
+      <div class="strength-card glass-card stagger-reveal">
         <h3>Consistency</h3>
-        <p>Fairness and transparency. Holding the same standards for every resident.</p>
+        <p>Fairness and transparency. Holding the same standards for every resident to create trust.</p>
       </div>
     </div>
   </section>
@@ -326,20 +332,20 @@
       <h2 class="section-title">The <span class="fancy-serif">Toolkit</span>.</h2>
     </div>
     <div class="skills-grid">
-      <div class="skill-card glass-card gsap-reveal">
+      <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">01</span>
         <h3>Time Management</h3>
-        <p>Balancing a full class schedule with duty nights and personal life using clear systems.</p>
+        <p>Balancing a full class schedule with duty nights and program planning using clear, color-coded systems.</p>
       </div>
-      <div class="skill-card glass-card gsap-reveal">
+      <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">02</span>
         <h3>Cultural Awareness</h3>
-        <p>Supporting residents from diverse backgrounds with an open mind and adaptability.</p>
+        <p>Supporting residents from diverse backgrounds with an open mind and adaptability for every interaction.</p>
       </div>
-      <div class="skill-card glass-card gsap-reveal">
+      <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">03</span>
         <h3>Conflict Mediation</h3>
-        <p>Staying calm and listening carefully to guide parties toward workable solutions.</p>
+        <p>Staying calm and listening carefully to guide residents toward workable resolutions in any situation.</p>
       </div>
     </div>
   </section>
@@ -349,23 +355,23 @@
       <h2 class="section-title">The <span class="fancy-serif">Support</span>.</h2>
     </div>
     <div class="res-grid">
-      <a href="https://harrisburg.psu.edu/counseling-psychological-services" class="res-card glass-card gsap-reveal" target="_blank">
-        <span class="theory-tag">Health</span>
+      <a href="https://harrisburg.psu.edu/counseling-psychological-services" class="res-card glass-card stagger-reveal" target="_blank">
+        <span class="theory-tag">Mental Health</span>
         <h3>CAPS</h3>
         <p>Free, confidential mental health services. Mental health is health.</p>
-        <span class="res-link">Visit →</span>
+        <span class="res-link">Visit CAPS →</span>
       </a>
-      <a href="https://harrisburg.psu.edu/career-services" class="res-card glass-card gsap-reveal" target="_blank">
+      <a href="https://harrisburg.psu.edu/career-services" class="res-card glass-card stagger-reveal" target="_blank">
         <span class="theory-tag">Career</span>
         <h3>Career Services</h3>
-        <p>Resume building, mock interviews, and internship searches.</p>
-        <span class="res-link">Visit →</span>
+        <p>Resume building, mock interviews, and internship searches for your path.</p>
+        <span class="res-link">Visit Careers →</span>
       </a>
-      <a href="https://harrisburg.psu.edu/student-advocacy/food-insecurity" class="res-card glass-card gsap-reveal" target="_blank">
+      <a href="https://harrisburg.psu.edu/student-advocacy/food-insecurity" class="res-card glass-card stagger-reveal" target="_blank">
         <span class="theory-tag">Essentials</span>
         <h3>WE CARE Pantry</h3>
         <p>Free essential items for students. Completely confidential.</p>
-        <span class="res-link">Visit →</span>
+        <span class="res-link">Visit Pantry →</span>
       </a>
     </div>
   </section>
@@ -375,60 +381,76 @@
       <div class="vision-photo gsap-reveal"></div>
       <blockquote class="vision-quote gsap-reveal">"A well-designed program creates a shared memory, and shared memories are the foundation of community."</blockquote>
       <div class="glass-card gsap-reveal" style="color: var(--text-dark); text-align: left; max-width: 800px; margin: 0 auto;">
-        <h4 style="margin-bottom: 1.5rem; font-size: 1.4rem;">The Zombie Run Experience</h4>
-        <p>When I participated in Zombie Run, I was initially anxious. But the structure made connection natural. I left feeling more confident. As an RA, I will design experiences that make residents feel they belong.</p>
+        <h4 style="margin-bottom: 1.5rem; font-size: 1.5rem;">The Zombie Run Experience</h4>
+        <p>When I participated in Zombie Run, I was initially anxious. But the structure made connection natural. I left feeling more confident. As an RA, I will design experiences that make residents feel they genuinely belong.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="vision">
+    <div class="section-header gsap-reveal">
+      <h2 class="section-title">The <span class="fancy-serif">Vision</span>.</h2>
+    </div>
+    <div class="glass-card gsap-reveal" style="text-align: center; padding: 6rem 3rem;">
+      <p style="font-size: 2rem; font-weight: 700; margin-bottom: 3rem; font-family: 'Playfair Display', serif; font-style: italic;">"At the end of an academic year, I want my residents to leave feeling more confident in who they are."</p>
+      <p style="opacity: 0.7; max-width: 850px; margin: 0 auto; font-size: 1.2rem;">I want them to feel like they had someone in their corner. Whether it's meaningful connection, resource awareness, or self-advocacy—that is the community I am committed to building.</p>
+      <div style="margin-top: 4rem;">
+        <a href="mailto:naomi@example.edu" class="btn btn-primary">Let's Connect</a>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="footer-logo gsap-reveal">NAOMI.</div>
-    <p style="opacity:0.4; font-weight:700; text-transform:uppercase; font-size:0.7rem;">© 2026 Naomi Teklemariam · RA Portfolio</p>
+    <p style="opacity:0.4; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.1em;">© 2026 Naomi Teklemariam · RA Portfolio</p>
   </footer>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Fade and Scale Reveal
-    document.querySelectorAll('.gsap-reveal').forEach((el) => {
-      gsap.fromTo(el, 
-        { opacity: 0, y: 30, scale: 0.98, visibility: 'hidden' },
-        { 
-          opacity: 1, y: 0, scale: 1, visibility: 'visible',
-          duration: 1, ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none none"
+    // Initial check to prevent invisible elements if GSAP fails
+    window.addEventListener('load', () => {
+      // General Reveal
+      document.querySelectorAll('.gsap-reveal').forEach((el) => {
+        gsap.fromTo(el, 
+          { opacity: 0, y: 30, scale: 0.98, pointerEvents: 'none' },
+          { 
+            opacity: 1, y: 0, scale: 1, pointerEvents: 'auto',
+            duration: 1.2, ease: "power4.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 90%",
+              toggleActions: "play none none none"
+            }
           }
+        );
+      });
+
+      // Staggered Reveal for Grids
+      const revealGrids = ['.pillars-grid', '.strengths-grid', '.skills-grid', '.res-grid'];
+      revealGrids.forEach(gridClass => {
+        const grid = document.querySelector(gridClass);
+        if (grid) {
+          gsap.fromTo(grid.querySelectorAll('.stagger-reveal'), 
+            { opacity: 0, y: 40, pointerEvents: 'none' },
+            { 
+              opacity: 1, y: 0, pointerEvents: 'auto',
+              stagger: 0.2, duration: 1, ease: "power3.out",
+              scrollTrigger: {
+                trigger: grid,
+                start: "top 85%",
+                toggleActions: "play none none none"
+              }
+            }
+          );
         }
-      );
-    });
-
-    // Staggered list reveals for cards
-    const grids = ['.pillars-grid', '.strengths-grid', '.skills-grid', '.res-grid'];
-    grids.forEach(grid => {
-      gsap.from(grid + ' .glass-card', {
-        scrollTrigger: {
-          trigger: grid,
-          start: "top 80%",
-        },
-        y: 40,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: "power2.out"
       });
     });
 
-    // Image hover float
-    document.querySelectorAll('.hero-image-wrap, .about-image, .theory-image').forEach(img => {
-      img.addEventListener('mouseenter', () => {
-        gsap.to(img, { scale: 1.05, duration: 0.5, ease: "power2.out" });
-      });
-      img.addEventListener('mouseleave', () => {
-        gsap.to(img, { scale: 1, duration: 0.5, ease: "power2.out" });
-      });
+    // Image hover effects
+    document.querySelectorAll('.hero-image-wrap, .about-image, .theory-image, .vision-photo').forEach(img => {
+      img.addEventListener('mouseenter', () => gsap.to(img, { scale: 1.04, duration: 0.6, ease: "power2.out" }));
+      img.addEventListener('mouseleave', () => gsap.to(img, { scale: 1, duration: 0.6, ease: "power2.out" }));
     });
   </script>
 </body>
