@@ -27,7 +27,6 @@
       --pill-radius: 100px;
       --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
       
-      /* Global Zoom Out */
       font-size: 15px; 
     }
 
@@ -69,15 +68,15 @@
       position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%);
       width: calc(100% - 4rem); max-width: 1050px; z-index: 1000;
       background: var(--glass-bg); backdrop-filter: blur(30px);
-      border: 1px solid var(--glass-border); padding: 0.8rem 2.5rem;
+      border: 1px solid var(--glass-border); padding: 0.7rem 2.5rem;
       border-radius: var(--pill-radius); display: flex; align-items: center; justify-content: space-between;
       box-shadow: 0 10px 40px rgba(0,0,0,0.02);
     }
     .nav-logo { font-size: 1.3rem; font-weight: 900; text-decoration: none; color: var(--text-dark); }
-    .nav-links { display: flex; gap: 0.5rem; list-style: none; }
+    .nav-links { display: flex; gap: 0.4rem; list-style: none; }
     .nav-links a {
       text-decoration: none; color: var(--text-dark); font-size: 0.75rem; font-weight: 700;
-      text-transform: uppercase; padding: 0.6rem 1.4rem; border-radius: var(--pill-radius);
+      text-transform: uppercase; padding: 0.5rem 1.2rem; border-radius: var(--pill-radius);
       transition: var(--transition); opacity: 0.6;
     }
     .nav-links a:hover { opacity: 1; background: rgba(255,255,255,0.7); }
@@ -86,7 +85,6 @@
     .hero {
       min-height: 100vh; display: flex; flex-direction: column;
       align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem;
-      position: relative;
     }
     .hero-badge {
       background: #fff; padding: 0.6rem 1.8rem; border-radius: var(--pill-radius);
@@ -117,7 +115,7 @@
     .glass-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.6); }
 
     /* ─── ABOUT ────────────────────────────────────── */
-    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: center; }
+    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: start; }
     .about-text p { margin-bottom: 2rem; font-size: 1.15rem; color: var(--text-mid); }
     .about-image {
       width: 100%; aspect-ratio: 4/5; border-radius: 45px; overflow: hidden;
@@ -125,7 +123,6 @@
       background: url('public/assets/hero-2.JPG') center/cover;
       transform: rotate(2deg);
     }
-
     .fast-facts {
       margin-top: 3rem; background: #fff; border-radius: 35px; padding: 3rem;
       box-shadow: 0 20px 50px rgba(0,0,0,0.02);
@@ -137,7 +134,7 @@
     /* ─── PILLARS ──────────────────────────────────── */
     .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .pillar-card { text-align: center; padding: 4rem 2rem; }
-    .pillar-icon { font-size: 5rem; display: block; margin-bottom: 2rem; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1)); }
+    .pillar-icon { font-size: 5rem; display: block; margin-bottom: 2rem; }
 
     /* ─── THEORY ───────────────────────────────────── */
     .theory-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
@@ -151,12 +148,15 @@
     .theory-tag { font-weight: 900; font-size: 0.75rem; color: var(--accent-pink); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
 
     /* ─── STRENGTHS ────────────────────────────────── */
-    .strengths-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-    .strength-card h3 { font-size: 1.8rem; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; }
+    .strengths-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+    .strength-card p { font-size: 1.1rem; color: var(--text-mid); }
+    .strength-card h3 { font-size: 1.8rem; margin-bottom: 1.2rem; }
 
     /* ─── SKILLS ───────────────────────────────────── */
     .skills-grid { display: grid; gap: 2rem; }
     .skill-card { padding: 4rem; position: relative; }
+    .skill-card h3 { font-size: 2rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif; }
+    .skill-card p { font-size: 1.15rem; color: var(--text-mid); }
     .skill-num { font-size: 5rem; font-weight: 900; opacity: 0.04; position: absolute; right: 3rem; top: 2rem; }
 
     /* ─── RESOURCES ────────────────────────────────── */
@@ -174,19 +174,6 @@
       margin: 0 auto 4rem; overflow: hidden; background: url('public/assets/IMG_6555.JPG') center/cover;
     }
     .vision-quote { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 3.8rem); font-style: italic; margin-bottom: 4rem; line-height: 1.2; }
-
-    /* ─── BUTTONS ──────────────────────────────────── */
-    .btn {
-      padding: 1.2rem 2.8rem; border-radius: var(--pill-radius); text-decoration: none;
-      font-size: 0.9rem; font-weight: 800; text-transform: uppercase; transition: var(--transition);
-      display: inline-block; cursor: pointer; border: none;
-    }
-    .btn-primary { background: linear-gradient(135deg, #1c2b3a 0%, #3e5871 100%); color: #fff; }
-    .btn-primary:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-
-    /* ─── FOOTER ───────────────────────────────────── */
-    footer { padding: 8rem 2rem; text-align: center; border-top: 1px solid rgba(0,0,0,0.03); }
-    .footer-logo { font-size: 3rem; font-weight: 900; margin-bottom: 1.5rem; letter-spacing: -0.05em; }
 
     /* GSAP Reveal Targets */
     .gsap-reveal { opacity: 0; pointer-events: none; }
@@ -220,24 +207,26 @@
     <div class="fancy-serif" style="font-size: 1.1rem; opacity: 0.6;">Est. 2026</div>
   </nav>
 
+  <!-- Section 1: Introduction -->
   <header class="hero">
     <div class="hero-badge gsap-reveal">RA Portfolio · Penn State Harrisburg</div>
     <div class="hero-image-wrap gsap-reveal"></div>
     <h1 class="hero-name gsap-reveal">Naomi <span class="fancy-serif">Teklemariam</span></h1>
-    <p class="hero-sub gsap-reveal">Bridge Builder. Future Leader. <span class="curly-accent">And part-time baker.</span></p>
+    <p class="hero-sub gsap-reveal">Bridge Builder. Future Leader. <span class="curly-accent">Forgetful Mike Ross.</span></p>
     <div class="hero-cta gsap-reveal">
-      <a href="#about" class="btn btn-primary">Explore Portfolio</a>
+      <a href="#about" class="btn-primary" style="padding: 1.2rem 2.8rem; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase;">Explore Portfolio</a>
     </div>
   </header>
 
+  <!-- Section 1.5: About -->
   <section id="about">
     <div class="about-grid">
       <div class="about-text glass-card gsap-reveal">
         <h2 class="section-title" style="text-align:left;">The <span class="fancy-serif">Energy</span>.</h2>
-        <p>Hi! I'm <strong>Naomi Teklemariam</strong> (she/her), your RA for this upcoming year, and I'm excited to meet you. I'm from <strong>Addis Ababa, Ethiopia</strong> — home and family mean everything to me, so I understand how difficult it is to be so far away from home. Whenever you're feeling homesick, I'm always here for you.</p>
-        <p>As a member of the African Student Association and a Senator in the Student Government Association, I'm actively involved on campus. I'm a Political Science major pursuing a minor in Legal Studies and a certificate in African Sustainability and Development.</p>
-        <p>You can think of me as <strong>Mike Ross</strong>, just a bit more forgetful! Some of my favourite pastimes include reading, painting, and baking. If you're lucky, you might get to try one of my sweet treats.</p>
-        <p>I'm really looking forward to getting to know every one of you. Whether it's through one-on-one meetings or late-night chats, I can't wait to make you feel like Penn State is home away from home.</p>
+        <p>Hi! I'm <strong>Naomi Teklemariam</strong> (she/her), your RA for this upcoming year, and I'm excited to meet you. I'm from <strong>Addis Ababa, Ethiopia</strong>. My home and family mean everything to me, so I understand how difficult it is to be so far away from home. Whenever you're feeling homesick, I'm always here for you.</p>
+        <p>As a member of the African Student Association and a Senator in the Student Government Association, I'm actively involved on campus—so if you see me, please don't hesitate to say hi! I'm a Political Science major pursuing a minor in Legal Studies and a certificate in African Sustainability and Development. You can think of me as <strong>Mike Ross</strong>, just a bit more forgetful.</p>
+        <p>Some of my favourite pastimes include reading, painting, spending time with friends and family, and baking. If you're lucky, you might get to try one of my sweet treats.</p>
+        <p>Now that you know a bit about me, I want to say I'm really looking forward to getting to know every one of you. Whether it's through one-on-one meetings, late-night chats, or perhaps even conflict mediations (hopefully not too many of those), I can't wait to make you feel welcome and like Penn State is home away from home.</p>
       </div>
       <div class="gsap-reveal">
         <div class="about-image"></div>
@@ -252,56 +241,66 @@
     </div>
   </section>
 
+  <!-- Section 2: What Is an RA? -->
   <section id="role">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">What is an <span class="fancy-serif">RA</span>?</h2>
-      <p style="max-width: 900px; margin: 0 auto; opacity: 0.6; font-size: 1.2rem; font-family: 'Playfair Display', serif;">"A trained peer and residence life staff member tasked with fostering an inclusive community and helping students adjust to college life."</p>
+      <p style="max-width: 900px; margin: 0 auto; opacity: 0.6; font-size: 1.2rem; font-family: 'Playfair Display', serif;">"A Resident Assistant is a trained peer and residence life staff member tasked with fostering an inclusive community and helping other students adjust to college life and its obstacles."</p>
     </div>
     <div class="pillars-grid">
       <div class="pillar-card glass-card stagger-reveal">
         <span class="pillar-icon">🌉</span>
         <h3>Bridge Builder</h3>
-        <p>Connecting students to resources, support systems, and the institution.</p>
+        <p>Connecting students to resources, supporting them in navigating challenges, and helping them feel welcome.</p>
       </div>
       <div class="pillar-card glass-card stagger-reveal">
         <span class="pillar-icon">🤝</span>
         <h3>Peer First</h3>
-        <p>I'm a student too. I understand your perspective and respond accordingly.</p>
+        <p>RAs are students themselves, which means they understand situations from a student's perspective and can respond accordingly.</p>
       </div>
       <div class="pillar-card glass-card stagger-reveal">
         <span class="pillar-icon">🏠</span>
-        <h3>Community Creator</h3>
-        <p>Making the residence hall feel like a genuine home away from home.</p>
+        <h3>Safety Hub</h3>
+        <p>Creating a safe and welcoming environment while upholding university policies with genuine care for residents.</p>
       </div>
+    </div>
+    <div class="glass-card gsap-reveal" style="margin-top: 4rem;">
+      <p style="font-size: 1.2rem; color: var(--text-mid);">As your RA, my role extends far beyond enforcing rules and filing reports. It means managing a wide range of residential responsibilities alongside academic and co-curricular ones while playing an essential part in helping both students and the institution thrive in all aspects.</p>
     </div>
   </section>
 
+  <!-- Section 3: Student Development Theory -->
   <section id="theory">
     <div class="theory-grid">
       <div class="theory-image gsap-reveal"></div>
       <div class="theory-content">
         <h2 class="section-title gsap-reveal" style="text-align:left;">The <span class="fancy-serif">Blueprint</span>.</h2>
-        <p class="gsap-reveal" style="margin-bottom: 4rem; font-size: 1.2rem; opacity: 0.7;">Learning about Student Development Theories has fundamentally shaped the way I approach my role.</p>
+        <p class="gsap-reveal" style="margin-bottom: 4rem; font-size: 1.2rem; opacity: 0.7;">Learning about Student Development Theories has fundamentally shaped my identification of potential challenges and strategic responses.</p>
         
         <div class="theory-item gsap-reveal">
           <span class="theory-tag">Alexander Astin</span>
           <h3>Involvement Theory</h3>
-          <p>Time and energy invested directly impacts development. I tailor programs to residents' actual interests—not just what's convenient.</p>
+          <p>Time and energy invested directly impacts development. I ensure every event is tailored to residents' actual interests—not just what's convenient—to create experiences they genuinely want to return to.</p>
         </div>
         <div class="theory-item gsap-reveal">
           <span class="theory-tag">Baxter Magolda</span>
           <h3>Self-Authorship Theory</h3>
-          <p>Developing one's own identity. I guide residents through moments of self-discovery and internal guidance.</p>
+          <p>Developing identity without dependence on external validation. I guide residents through moments of self-discovery, recommending resources like CAPS and scheduling one-on-ones to assess their internal growth.</p>
         </div>
         <div class="theory-item gsap-reveal">
           <span class="theory-tag">Vincent Tinto</span>
           <h3>Retention Theory</h3>
-          <p>Integration is key. By organizing Community Builder events, I apply this theory to ensure every student feels they belong.</p>
+          <p>Students persist when academically and socially integrated. By organizing Community Builder events and creating genuine incentives, I help ensure every student feels they belong here.</p>
         </div>
       </div>
     </div>
+    <div class="glass-card gsap-reveal" style="margin-top: 4rem; background: var(--text-dark); color: #fff;">
+      <h3 style="margin-bottom: 1.5rem; font-family: 'Playfair Display', serif; font-style: italic;">How These Theories Shape My Strategies</h3>
+      <p style="opacity: 0.8; font-size: 1.1rem;">Across all theories, my strategies are: <strong>Intentional Programming</strong> (addressing real needs), <strong>One-on-One Connection</strong> (residents as individuals), and <strong>Resource Referral</strong> (pointing toward campus services and following up). Together, these approaches support the whole development of my residents.</p>
+    </div>
   </section>
 
+  <!-- Section 4: My Strengths -->
   <section id="strengths">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">My <span class="fancy-serif">Aura</span>.</h2>
@@ -310,23 +309,28 @@
     <div class="strengths-grid">
       <div class="strength-card glass-card stagger-reveal">
         <h3>Strategic</h3>
-        <p>I naturally look for patterns and think steps ahead to find the right path forward for my residents.</p>
+        <p>I naturally look for patterns and think steps ahead. When a resident feels stuck, I help them see several paths forward so they can make a choice that feels right for them.</p>
       </div>
       <div class="strength-card glass-card stagger-reveal">
         <h3>Positivity</h3>
-        <p>I encourage people and keep morale up, especially during stressful periods like midterms or finals.</p>
+        <p>I help keep morale up, especially during stress like midterms. I'm mindful that sometimes people just need space to feel what they are feeling first, and I will meet them there.</p>
       </div>
       <div class="strength-card glass-card stagger-reveal" style="background: var(--text-dark); color: #fff;">
         <h3>Futuristic</h3>
-        <p>Motivated by the bigger picture, reminding residents that difficult moments are always temporary.</p>
+        <p>Motivated by the bigger picture, I remind residents that difficult moments are temporary. I am actively working on sitting with the process rather than rushing toward the outcome.</p>
       </div>
       <div class="strength-card glass-card stagger-reveal">
         <h3>Consistency</h3>
-        <p>Fairness and transparency. Holding the same standards for every resident to create trust.</p>
+        <p>I believe in fairness and transparency. I hold the same standards for every resident to create trust and predictability on the floor, while learning to adapt when circumstances call for it.</p>
+      </div>
+      <div class="strength-card glass-card stagger-reveal">
+        <h3>Focus</h3>
+        <p>I follow through on what I start, meet deadlines, and stay on track with goals. I am learning to manage unexpected shifts in plans with more flexibility and less frustration.</p>
       </div>
     </div>
   </section>
 
+  <!-- Section 5: Transferable Skills -->
   <section id="skills">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">The <span class="fancy-serif">Toolkit</span>.</h2>
@@ -335,85 +339,112 @@
       <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">01</span>
         <h3>Time Management</h3>
-        <p>Balancing a full class schedule with duty nights and program planning using clear, color-coded systems.</p>
+        <p>Balancing a full class schedule with duty nights and program planning. RAs live where they work, requiring clear systems like color-coded calendars and the discipline to protect priorities in an unpredictable role.</p>
       </div>
       <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">02</span>
-        <h3>Cultural Awareness</h3>
-        <p>Supporting residents from diverse backgrounds with an open mind and adaptability for every interaction.</p>
+        <h3>Cultural Awareness and Adaptability</h3>
+        <p>Supporting residents from diverse backgrounds. I encounter perspectives that challenge my own and approach every interaction with an open mind, meeting people where they are, not where I expect them to be.</p>
       </div>
       <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">03</span>
-        <h3>Conflict Mediation</h3>
-        <p>Staying calm and listening carefully to guide residents toward workable resolutions in any situation.</p>
+        <h3>Problem Solving and Conflict Mediation</h3>
+        <p>Conflict happens in every community. As an RA, I will stay calm, listen carefully, and help residents find a resolution. This ability to navigate conflict professionally is invaluable in any future workplace.</p>
+      </div>
+      <div class="skill-card glass-card stagger-reveal">
+        <span class="skill-num">04</span>
+        <h3>Intentional Community Building</h3>
+        <p>Understanding what residents actually need and designing experiences around that. It requires attention, curiosity, and the consistency to do the work, translating directly to any leadership role.</p>
+      </div>
+      <div class="skill-card glass-card stagger-reveal">
+        <span class="skill-num">05</span>
+        <h3>Content Creation and Marketing Mindset</h3>
+        <p>Approaching attendance like a marketer. I use my social media experience to craft compelling messaging and visuals that make programs feel worth showing up for, capturing the attention of my floor.</p>
       </div>
     </div>
   </section>
 
+  <!-- Section 6: Campus Resources -->
   <section id="resources">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">The <span class="fancy-serif">Support</span>.</h2>
+      <p style="max-width: 700px; margin: 0 auto; opacity: 0.6;">College comes with challenges that no one should navigate alone. These resources are free, confidential, and immensely useful.</p>
     </div>
     <div class="res-grid">
       <a href="https://harrisburg.psu.edu/counseling-psychological-services" class="res-card glass-card stagger-reveal" target="_blank">
-        <span class="theory-tag">Mental Health</span>
+        <span class="theory-tag">877-229-6400</span>
         <h3>CAPS</h3>
         <p>Free, confidential mental health services. Mental health is health.</p>
         <span class="res-link">Visit CAPS →</span>
       </a>
       <a href="https://harrisburg.psu.edu/career-services" class="res-card glass-card stagger-reveal" target="_blank">
-        <span class="theory-tag">Career</span>
+        <span class="theory-tag">717-948-6260</span>
         <h3>Career Services</h3>
-        <p>Resume building, mock interviews, and internship searches for your path.</p>
+        <p>Resume building, mock interviews, and career exploration.</p>
         <span class="res-link">Visit Careers →</span>
       </a>
       <a href="https://harrisburg.psu.edu/student-advocacy/food-insecurity" class="res-card glass-card stagger-reveal" target="_blank">
-        <span class="theory-tag">Essentials</span>
+        <span class="theory-tag">foodpantry@psu.edu</span>
         <h3>WE CARE Pantry</h3>
-        <p>Free essential items for students. Completely confidential.</p>
+        <p>Confidential free essential items for students in need.</p>
         <span class="res-link">Visit Pantry →</span>
+      </a>
+      <a href="https://harrisburg.psu.edu/student-advocacy" class="res-card glass-card stagger-reveal" target="_blank">
+        <span class="theory-tag">HBGCares@psu.edu</span>
+        <h3>Student Care</h3>
+        <p>Central hub for navigating difficult academic or personal situations.</p>
+        <span class="res-link">Visit Student Care →</span>
+      </a>
+      <a href="https://harrisburg.psu.edu/global" class="res-card glass-card stagger-reveal" target="_blank">
+        <span class="theory-tag">717-948-6647</span>
+        <h3>Global Engagement</h3>
+        <p>Visa advising and adjusting to life at home at Penn State.</p>
+        <span class="res-link">Visit Global Engagement →</span>
       </a>
     </div>
   </section>
 
+  <!-- Section 7: Community Building -->
   <section id="community">
     <div class="vision-container gsap-reveal">
       <div class="vision-photo gsap-reveal"></div>
-      <blockquote class="vision-quote gsap-reveal">"A well-designed program creates a shared memory, and shared memories are the foundation of community."</blockquote>
-      <div class="glass-card gsap-reveal" style="color: var(--text-dark); text-align: left; max-width: 800px; margin: 0 auto;">
-        <h4 style="margin-bottom: 1.5rem; font-size: 1.5rem;">The Zombie Run Experience</h4>
-        <p>When I participated in Zombie Run, I was initially anxious. But the structure made connection natural. I left feeling more confident. As an RA, I will design experiences that make residents feel they genuinely belong.</p>
+      <blockquote class="vision-quote gsap-reveal">"A well-designed program does not just fill an hour, it creates a shared memory, and shared memories are the foundation of real community."</blockquote>
+      <div class="glass-card gsap-reveal" style="color: var(--text-dark); text-align: left; max-width: 850px; margin: 0 auto; padding: 4rem;">
+        <h4 style="margin-bottom: 2rem; font-size: 1.6rem; font-family: 'Playfair Display', serif; font-style: italic;">The Zombie Run Experience</h4>
+        <p style="margin-bottom: 1.5rem;">When I participated in Zombie Run, I was initially anxious about meeting new people in an unfamiliar setting. But the structure of the program—which was built around collaboration and shared goals rather than forced socializing—made it easy to connect naturally.</p>
+        <p>I left feeling more confident and more connected than I expected. As an RA, I will not just plan events but design experiences that make residents feel they genuinely belong here.</p>
       </div>
     </div>
   </section>
 
+  <!-- Section 8: Vision -->
   <section id="vision">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">The <span class="fancy-serif">Vision</span>.</h2>
     </div>
-    <div class="glass-card gsap-reveal" style="text-align: center; padding: 6rem 3rem;">
-      <p style="font-size: 2rem; font-weight: 700; margin-bottom: 3rem; font-family: 'Playfair Display', serif; font-style: italic;">"At the end of an academic year, I want my residents to leave feeling more confident in who they are."</p>
-      <p style="opacity: 0.7; max-width: 850px; margin: 0 auto; font-size: 1.2rem;">I want them to feel like they had someone in their corner. Whether it's meaningful connection, resource awareness, or self-advocacy—that is the community I am committed to building.</p>
-      <div style="margin-top: 4rem;">
-        <a href="mailto:naomi@example.edu" class="btn btn-primary">Let's Connect</a>
+    <div class="glass-card gsap-reveal" style="text-align: center; padding: 6rem 4rem;">
+      <p style="font-size: 2.2rem; font-weight: 700; margin-bottom: 3.5rem; font-family: 'Playfair Display', serif; font-style: italic; line-height: 1.1;">"At the end of an academic year, I want my residents to leave feeling more confident in who they are than when they arrived."</p>
+      <p style="opacity: 0.7; max-width: 850px; margin: 0 auto; font-size: 1.25rem;">I want them to feel like they had someone in their corner. I hope each resident will leave with at least one meaningful connection they did not have before, a clearer sense of resources, and the confidence to advocate for themselves academically, personally, and socially.</p>
+      <div style="margin-top: 4.5rem;">
+        <!-- Fix Email Ask Bilu-->i
+        <a href="mailto:naomi@example.edu" class="btn-primary" style="padding: 1.2rem 3rem; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase;">Get In Touch</a>
       </div>
     </div>
   </section>
 
   <footer>
     <div class="footer-logo gsap-reveal">NAOMI.</div>
-    <p style="opacity:0.4; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.1em;">© 2026 Naomi Teklemariam · RA Portfolio</p>
+    <p style="opacity:0.4; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.1em;">© 2026 Naomi Teklemariam · RA Portfolio · Built for Excellence</p>
   </footer>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initial check to prevent invisible elements if GSAP fails
     window.addEventListener('load', () => {
-      // General Reveal
+      // General Reveal for large blocks
       document.querySelectorAll('.gsap-reveal').forEach((el) => {
         gsap.fromTo(el, 
-          { opacity: 0, y: 30, scale: 0.98, pointerEvents: 'none' },
+          { opacity: 0, y: 30, scale: 0.99, pointerEvents: 'none' },
           { 
             opacity: 1, y: 0, scale: 1, pointerEvents: 'auto',
             duration: 1.2, ease: "power4.out",
@@ -426,7 +457,7 @@
         );
       });
 
-      // Staggered Reveal for Grids
+      // Staggered Reveal for items in Grids
       const revealGrids = ['.pillars-grid', '.strengths-grid', '.skills-grid', '.res-grid'];
       revealGrids.forEach(gridClass => {
         const grid = document.querySelector(gridClass);
@@ -435,7 +466,7 @@
             { opacity: 0, y: 40, pointerEvents: 'none' },
             { 
               opacity: 1, y: 0, pointerEvents: 'auto',
-              stagger: 0.2, duration: 1, ease: "power3.out",
+              stagger: 0.15, duration: 1, ease: "power3.out",
               scrollTrigger: {
                 trigger: grid,
                 start: "top 85%",
