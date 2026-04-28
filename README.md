@@ -88,21 +88,6 @@ Set source to main branch / (root)
 
 Your site will be live at https://YOUR_USERNAME.github.io/REPO_NAME/
 
-📧 Contact
-Naomi Teklemariam
-Penn State Harrisburg
-[Your Email]@psu.edu
-
-📝 Assignment Notes
-This portfolio was created for a Residence Life position requirement. Key assignment criteria met:
-
-✅ Publicly accessible by deadline
-✅ Clear navigation between all 8 sections
-✅ Live hyperlinks to all 5 campus resources
-✅ Tone balances formal (professors), professional (supervisors), and warm (residents)
-✅ Includes all required content sections
-
-
 **Quick Setup Instructions for You**
 ```
 # Initialize git in your project folder
@@ -127,3 +112,8 @@ git push -u origin main
 📄 License
 This project is for portfolio/educational purposes. All content © Nahom Teklemariam.
 Made By Nahom Teklemariam
+
+📧 Contact
+
+nahomnatnael87@gmail.com
+https://nahomtmariam.com
