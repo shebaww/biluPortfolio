@@ -31,17 +31,6 @@ The site is designed to address three audiences simultaneously:
 - **Google Fonts** - Outfit, Playfair Display, Pinyon Script
 - **No frameworks** - Vanilla implementation for lightweight performance
 
-## 📁 Project Structure
-├── index.html # Main portfolio file
-├── public/
-│ └── assets/ # Image assets
-│ ├── hero.JPG
-│ ├── hero-2.JPG
-│ ├── IMG_6520.JPG
-│ └── IMG_6555.JPG
-├── README.md
-└── screenshot.png # (optional) For GitHub preview
-
 
 ## 🎨 Features
 
@@ -76,26 +65,8 @@ The site is designed to address three audiences simultaneously:
 git clone https://github.com/shebaww/biluPortfolio.git
 cd biluPortfolio
 ```
-Add your photos
-Place your images in the public/assets/ folder with these exact filenames:
 
-hero.JPG
-
-hero-2.JPG
-
-IMG_6520.JPG
-
-IMG_6555.JPG
-
-Update your email
-Open index.html and replace:
-
-```
-href="mailto:naomi@example.edu"
-```
-with your actual Penn State email.
-
-Open in browser
+### Open in browser
 
 For best results, use a local server:
 
@@ -106,13 +77,6 @@ python -m http.server 8000
 # Using Node.js (npx)
 npx serve .
 ```
-📸 Image Requirements
-Filename	Recommended Size	Description
-hero.JPG	800x900px	Main hero portrait
-hero-2.JPG	1000x1200px	About section photo
-IMG_6520.JPG	800x800px	Theory section circular image
-IMG_6555.JPG	400x400px	Vision section circular photo
-All images should be high-quality JPGs. The site uses CSS background: cover so crop accordingly.
 
 🌐 Deployment
 GitHub Pages (Recommended)
@@ -140,39 +104,13 @@ Penn State Harrisburg
 This portfolio was created for a Residence Life position requirement. Key assignment criteria met:
 
 ✅ Publicly accessible by deadline
-
 ✅ Clear navigation between all 8 sections
-
 ✅ Live hyperlinks to all 5 campus resources
-
 ✅ Tone balances formal (professors), professional (supervisors), and warm (residents)
-
 ✅ Includes all required content sections
 
-🙏 Acknowledgments
-Penn State Harrisburg Residence Life
 
-CliftonStrengths assessment framework
-
-Student Development theorists: Astin, Baxter Magolda, Tinto
-
-
-## Also Create a `.gitignore` file:
-
-```gitignore
-# macOS
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-
-# Local environment
-.env
-```
-
-Quick Setup Instructions for You
+**Quick Setup Instructions for You**
 ```
 # Initialize git in your project folder
 git init
@@ -195,3 +133,4 @@ git push -u origin main
 
 📄 License
 This project is for portfolio/educational purposes. All content © Nahom Teklemariam.
+Made By Nahom Teklemariam
