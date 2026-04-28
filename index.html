@@ -174,7 +174,16 @@
       margin: 0 auto 4rem; overflow: hidden; background: url('public/assets/IMG_6555.JPG') center/cover;
     }
     .vision-quote { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 3.8rem); font-style: italic; margin-bottom: 4rem; line-height: 1.2; }
-
+.btn-primary {
+  background: linear-gradient(135deg, #1c2b3a 0%, #3e5871 100%);
+  color: #fff;
+  display: inline-block;
+  transition: var(--transition);
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
     /* GSAP Reveal Targets */
     .gsap-reveal { opacity: 0; pointer-events: none; }
     .stagger-reveal { opacity: 0; pointer-events: none; }
@@ -231,7 +240,7 @@
       <div class="gsap-reveal">
         <div class="about-image"></div>
         <div class="fast-facts">
-          <h3 style="margin-bottom: 2rem; font-size: 1.6rem; letter-spacing: -0.02em;">Quick Hits</h3>
+          <h3 style="margin-bottom: 2rem; font-size: 1.6rem; letter-spacing: -0.02em;">Fun Facts</h3>
           <div class="fact-item"><span class="fact-label">Hometown</span> <span class="fact-value">Addis Ababa, ET</span></div>
           <div class="fact-item"><span class="fact-label">Major</span> <span class="fact-value">Political Science</span></div>
           <div class="fact-item"><span class="fact-label">Minor</span> <span class="fact-value">Legal Studies</span></div>
@@ -426,7 +435,7 @@
       <p style="font-size: 2.2rem; font-weight: 700; margin-bottom: 3.5rem; font-family: 'Playfair Display', serif; font-style: italic; line-height: 1.1;">"At the end of an academic year, I want my residents to leave feeling more confident in who they are than when they arrived."</p>
       <p style="opacity: 0.7; max-width: 850px; margin: 0 auto; font-size: 1.25rem;">I want them to feel like they had someone in their corner. I hope each resident will leave with at least one meaningful connection they did not have before, a clearer sense of resources, and the confidence to advocate for themselves academically, personally, and socially.</p>
       <div style="margin-top: 4.5rem;">
-        <!-- Fix Email Ask Bilu-->i
+        <!-- Fix Email Ask Bilu-->
         <a href="mailto:naomi@example.edu" class="btn-primary" style="padding: 1.2rem 3rem; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase;">Get In Touch</a>
       </div>
     </div>
