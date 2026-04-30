@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Pinyon+Script&display=swap" rel="stylesheet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -148,8 +149,8 @@
     .theory-tag { font-weight: 900; font-size: 0.75rem; color: var(--accent-pink); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
 
     /* ─── STRENGTHS ────────────────────────────────── */
-    .strengths-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-    .strength-card p { font-size: 1.1rem; color: var(--text-mid); }
+    .strengths-grid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+    .strength-card p { font-size: 1.1rem; color: var(--text-mid);}
     .strength-card h3 { font-size: 1.8rem; margin-bottom: 1.2rem; }
 
     /* ─── SKILLS ───────────────────────────────────── */
@@ -204,7 +205,7 @@
   </div>
 
   <nav class="gsap-reveal">
-    <a href="#" class="nav-logo">NAOMI.</a>
+    <a href="#" class="nav-logo">NAOMI TMARIAM</a>
     <ul class="nav-links">
       <li><a href="#about">Bio</a></li>
       <li><a href="#role">The Role</a></li>
@@ -213,7 +214,6 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#resources">Support</a></li>
     </ul>
-    <div class="fancy-serif" style="font-size: 1.1rem; opacity: 0.6;">Est. 2026</div>
   </nav>
 
   <!-- Section 1: Introduction -->
@@ -221,9 +221,8 @@
     <div class="hero-badge gsap-reveal">RA Portfolio · Penn State Harrisburg</div>
     <div class="hero-image-wrap gsap-reveal"></div>
     <h1 class="hero-name gsap-reveal">Naomi <span class="fancy-serif">Teklemariam</span></h1>
-    <p class="hero-sub gsap-reveal">Bridge Builder. Future Leader. <span class="curly-accent">Forgetful Mike Ross.</span></p>
     <div class="hero-cta gsap-reveal">
-      <a href="#about" class="btn-primary" style="padding: 1.2rem 2.8rem; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase;">Explore Portfolio</a>
+      <a href="#about" class="btn-primary" style="margin-top: 5px; padding: 1.2rem 2.8rem; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase;">Explore Portfolio</a>
     </div>
   </header>
 
@@ -231,7 +230,7 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-text glass-card gsap-reveal">
-        <h2 class="section-title" style="text-align:left;">The <span class="fancy-serif">Energy</span>.</h2>
+        <h2 class="section-title" style="text-align:left;">Get to know <span class="fancy-serif">Me</span>.</h2>
         <p>Hi! I'm <strong>Naomi Teklemariam</strong> (she/her), your RA for this upcoming year, and I'm excited to meet you. I'm from <strong>Addis Ababa, Ethiopia</strong>. My home and family mean everything to me, so I understand how difficult it is to be so far away from home. Whenever you're feeling homesick, I'm always here for you.</p>
         <p>As a member of the African Student Association and a Senator in the Student Government Association, I'm actively involved on campus—so if you see me, please don't hesitate to say hi! I'm a Political Science major pursuing a minor in Legal Studies and a certificate in African Sustainability and Development. You can think of me as <strong>Mike Ross</strong>, just a bit more forgetful.</p>
         <p>Some of my favourite pastimes include reading, painting, spending time with friends and family, and baking. If you're lucky, you might get to try one of my sweet treats.</p>
@@ -239,38 +238,66 @@
       </div>
       <div class="gsap-reveal">
         <div class="about-image"></div>
-        <div class="fast-facts">
-          <h3 style="margin-bottom: 2rem; font-size: 1.6rem; letter-spacing: -0.02em;">Fun Facts</h3>
-          <div class="fact-item"><span class="fact-label">Hometown</span> <span class="fact-value">Addis Ababa, ET</span></div>
-          <div class="fact-item"><span class="fact-label">Major</span> <span class="fact-value">Political Science</span></div>
-          <div class="fact-item"><span class="fact-label">Minor</span> <span class="fact-value">Legal Studies</span></div>
-          <div class="fact-item"><span class="fact-label">Alter Ego</span> <span class="fact-value">Mike Ross</span></div>
-        </div>
       </div>
     </div>
   </section>
 
+  <!-- Section 4: My Strengths -->
+  <section id="strengths">
+    <div class="section-header gsap-reveal">
+      <h2 class="section-title">My <span class="fancy-serif">Strengths</span>.</h2>
+      <p style="opacity: 0.6; font-size: 1.1rem;">Why do these matter? Because I am committed to finding the right balance so I can create a grounded, fair, and supportive environment for my residents and myself.</p>
+    </div>
+    <div class="strengths-grid">
+      <div class="strength-card glass-card stagger-reveal">
+        <h3>Strategic</h3>
+        <p>I naturally look for patterns and think steps ahead. When a resident feels stuck, I help them see several paths forward so they can make a choice that feels right for them.</p>
+      </div>
+      <div class="strength-card glass-card stagger-reveal">
+        <h3>Positivity</h3>
+        <p>I help keep morale up, especially during stressful periods. That said, I am mindful that people need space to feel what they are feeling beforehand, and I’m ready to meet them there first.</p>
+      </div>
+      <div class="strength-card glass-card stagger-reveal">
+        <h3>Futuristic</h3>
+        <p>Motivated by the bigger picture, I remind residents that difficult moments are temporary. This is my favourite strength, as it enables me to persevere. However, I can get impatient and rush toward the outcome rather than enjoying the graduality of the process.</p>
+      </div>
+      <div class="strength-card glass-card stagger-reveal">
+        <h3>Consistency</h3>
+        <p>I am a <b>FIRM</b> believer in fairness and transparency. I hold the same standards for every resident to create trust and predictability on the floor, while learning to adapt when circumstances call for it.</p>
+      </div>
+      <div class="strength-card glass-card stagger-reveal">
+        <h3>Focus</h3>
+        <p>I follow through on what I start, meet deadlines, and stay on track with goals. When plans shift unexpectedly, I can get frustrated, which is something I am learning to manage with more flexibility.</p>
+      </div>
+    </div>
+  </section>
   <!-- Section 2: What Is an RA? -->
   <section id="role">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">What is an <span class="fancy-serif">RA</span>?</h2>
-      <p style="max-width: 900px; margin: 0 auto; opacity: 0.6; font-size: 1.2rem; font-family: 'Playfair Display', serif;">"A Resident Assistant is a trained peer and residence life staff member tasked with fostering an inclusive community and helping other students adjust to college life and its obstacles."</p>
+      <p style="max-width: 900px; margin: 0 auto; opacity: 0.6; font-size: 1.2rem; font-family: 'Playfair Display', serif;">A Resident Assistant is a trained peer and residence life staff member tasked with fostering an inclusive community and helping other students adjust to college life and its obstacles.</p>
     </div>
     <div class="pillars-grid">
       <div class="pillar-card glass-card stagger-reveal">
-        <span class="pillar-icon">🌉</span>
+        <span style="transform: rotate(90deg)" class="material-symbols-outlined pillar-icon">
+          add_road
+        </span>
         <h3>Bridge Builder</h3>
-        <p>Connecting students to resources, supporting them in navigating challenges, and helping them feel welcome.</p>
+        <p>An RA is responsible for connecting students to resources, supporting them in navigating challenges, and helping them feel welcome.</p>
       </div>
       <div class="pillar-card glass-card stagger-reveal">
-        <span class="pillar-icon">🤝</span>
+        <span class="material-symbols-outlined pillar-icon">
+handshake
+</span>
         <h3>Peer First</h3>
         <p>RAs are students themselves, which means they understand situations from a student's perspective and can respond accordingly.</p>
       </div>
       <div class="pillar-card glass-card stagger-reveal">
-        <span class="pillar-icon">🏠</span>
+        <span class="material-symbols-outlined pillar-icon">
+home
+</span>
         <h3>Safety Hub</h3>
-        <p>Creating a safe and welcoming environment while upholding university policies with genuine care for residents.</p>
+        <p>An RA creates a safe and welcoming environment while upholding university policies with genuine care for residents.</p>
       </div>
     </div>
     <div class="glass-card gsap-reveal" style="margin-top: 4rem;">
@@ -309,51 +336,23 @@
     </div>
   </section>
 
-  <!-- Section 4: My Strengths -->
-  <section id="strengths">
-    <div class="section-header gsap-reveal">
-      <h2 class="section-title">My <span class="fancy-serif">Aura</span>.</h2>
-      <p style="opacity: 0.6; font-size: 1.1rem;">Based on CliftonStrengths — how I show up for the floor.</p>
-    </div>
-    <div class="strengths-grid">
-      <div class="strength-card glass-card stagger-reveal">
-        <h3>Strategic</h3>
-        <p>I naturally look for patterns and think steps ahead. When a resident feels stuck, I help them see several paths forward so they can make a choice that feels right for them.</p>
-      </div>
-      <div class="strength-card glass-card stagger-reveal">
-        <h3>Positivity</h3>
-        <p>I help keep morale up, especially during stress like midterms. I'm mindful that sometimes people just need space to feel what they are feeling first, and I will meet them there.</p>
-      </div>
-      <div class="strength-card glass-card stagger-reveal" style="background: var(--text-dark); color: #fff;">
-        <h3>Futuristic</h3>
-        <p>Motivated by the bigger picture, I remind residents that difficult moments are temporary. I am actively working on sitting with the process rather than rushing toward the outcome.</p>
-      </div>
-      <div class="strength-card glass-card stagger-reveal">
-        <h3>Consistency</h3>
-        <p>I believe in fairness and transparency. I hold the same standards for every resident to create trust and predictability on the floor, while learning to adapt when circumstances call for it.</p>
-      </div>
-      <div class="strength-card glass-card stagger-reveal">
-        <h3>Focus</h3>
-        <p>I follow through on what I start, meet deadlines, and stay on track with goals. I am learning to manage unexpected shifts in plans with more flexibility and less frustration.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- Section 5: Transferable Skills -->
   <section id="skills">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">The <span class="fancy-serif">Toolkit</span>.</h2>
+      <p style="max-width: 900px; margin: 0 auto; opacity: 0.6; font-size: 1.2rem; font-family: 'Playfair Display', serif;">Bridging the RA Role and the Legal Profession</p>
     </div>
     <div class="skills-grid">
       <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">01</span>
         <h3>Time Management</h3>
-        <p>Balancing a full class schedule with duty nights and program planning. RAs live where they work, requiring clear systems like color-coded calendars and the discipline to protect priorities in an unpredictable role.</p>
+        <p>Understanding that having balance between a full class schedule and my role as an RA is mandatory, which requires me to have a clear organization system. While working towards becoming a lawyer will be my top priority, it won't be my only one.</p>
       </div>
       <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">02</span>
-        <h3>Cultural Awareness and Adaptability</h3>
-        <p>Supporting residents from diverse backgrounds. I encounter perspectives that challenge my own and approach every interaction with an open mind, meeting people where they are, not where I expect them to be.</p>
+        <h3>Awareness and Adaptability</h3>
+        <p>One of the most valuable parts of being an RA is having residents who come from different backgrounds. I will encounter a mosaic of perspectives and I am prepared to approach each one with an open mind. Whether a resident is a first-generation student adjusting to college life or an international student navigating a new country, I will meet them where they are, not where I expect them to be.</p>
       </div>
       <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">03</span>
@@ -442,7 +441,7 @@
   </section>
 
   <footer>
-    <div class="footer-logo gsap-reveal">NAOMI.</div>
+    <div class="footer-logo gsap-reveal">NAOMI TMARIAM</div>
     <p style="opacity:0.4; font-weight:700; text-transform:uppercase; font-size:0.8rem; letter-spacing:0.1em;">© 2026 Naomi Teklemariam · RA Portfolio · Built for Excellence</p>
   </footer>
 
