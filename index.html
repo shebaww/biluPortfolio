@@ -116,13 +116,20 @@
     .glass-card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.6); }
 
     /* ─── ABOUT ────────────────────────────────────── */
-    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: start; }
+    .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 5rem; align-items: start; }
     .about-text p { margin-bottom: 2rem; font-size: 1.15rem; color: var(--text-mid); }
     .about-image {
       width: 100%; aspect-ratio: 4/5; border-radius: 45px; overflow: hidden;
       border: 10px solid #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.08);
       background: url('public/assets/hero-2.JPG') center/cover;
       transform: rotate(2deg);
+    }
+    .about-image2 {
+      width: 100%; aspect-ratio: 4/5; border-radius: 45px; overflow: hidden;
+      border: 10px solid #fff; box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+      background: url('public/assets/IMG_6555.JPG') center/cover;
+      transform: rotate(7.5deg);
+      margin-top: -50px;
     }
     .fast-facts {
       margin-top: 3rem; background: #fff; border-radius: 35px; padding: 3rem;
@@ -193,6 +200,7 @@
       .about-grid, .theory-grid { grid-template-columns: 1fr; }
       nav { width: calc(100% - 2rem); }
       .nav-links { display: none; }
+      .pillars-grid{ display: flex; justify-content: center; flex-wrap: wrap; align-items: center;}
     }
   </style>
 </head>
@@ -238,6 +246,7 @@
       </div>
       <div class="gsap-reveal">
         <div class="about-image"></div>
+        <div class="about-image2"></div>
       </div>
     </div>
   </section>
@@ -415,7 +424,7 @@ home
   <!-- Section 7: Community Building -->
   <section id="community">
     <div class="vision-container gsap-reveal">
-      <div class="vision-photo gsap-reveal"></div>
+      <!-- <div class="vision-photo gsap-reveal"></div> -->
       <blockquote class="vision-quote gsap-reveal">"A well-designed program does not just fill an hour, it creates a shared memory, and shared memories are the foundation of real community."</blockquote>
       <div class="glass-card gsap-reveal" style="color: var(--text-dark); text-align: left; max-width: 850px; margin: 0 auto; padding: 4rem;">
         <h4 style="margin-bottom: 2rem; font-size: 1.6rem; font-family: 'Playfair Display', serif; font-style: italic;">The Zombie Run Experience</h4>
@@ -487,7 +496,7 @@ home
     });
 
     // Image hover effects
-    document.querySelectorAll('.hero-image-wrap, .about-image, .theory-image, .vision-photo').forEach(img => {
+    document.querySelectorAll('.hero-image-wrap, .about-image, .about-image2, .theory-image, .vision-photo').forEach(img => {
       img.addEventListener('mouseenter', () => gsap.to(img, { scale: 1.04, duration: 0.6, ease: "power2.out" }));
       img.addEventListener('mouseleave', () => gsap.to(img, { scale: 1, duration: 0.6, ease: "power2.out" }));
     });
