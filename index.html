@@ -264,8 +264,7 @@
 
     /* ─── THEORY ───────────────────────────────────── */
     .theory-grid { 
-      display: grid; 
-      grid-template-columns: 1fr; 
+      display: flex; 
       gap: 3rem; 
       align-items: start; 
     }
@@ -274,17 +273,6 @@
         grid-template-columns: 1fr 1.3fr; 
         gap: 5rem; 
       }
-    }
-    .theory-image {
-      width: 100%; 
-      aspect-ratio: 1; 
-      border-radius: 50%; 
-      overflow: hidden;
-      border: 10px solid #fff; 
-      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-      background: url('public/assets/IMG_6520.JPG') center/cover;
-      max-width: 400px;
-      margin: 0 auto;
     }
     .theory-item { margin-bottom: 3rem; }
     .theory-item h3 { font-size: 1.6rem; margin-bottom: 0.8rem; font-family: 'Playfair Display', serif; }
@@ -330,7 +318,7 @@
     .skill-card p { font-size: 1rem; color: var(--text-mid); }
     .skill-num { font-size: 4rem; font-weight: 900; opacity: 0.04; position: absolute; right: 1.5rem; top: 1rem; }
 
-    /* ─── RESOURCES ────────────────────────────────── */
+    /* ─── RESOURCES (6 cards grid) ────────────────────────────────── */
     .res-grid { 
       display: grid; 
       grid-template-columns: 1fr; 
@@ -355,28 +343,43 @@
       flex-direction: column; 
     }
 
-    /* ─── VISION ───────────────────────────────────── */
-    .vision-container {
-      background: var(--text-dark); 
-      color: #fff; 
-      border-radius: 60px; 
-      padding: 4rem 2rem; 
-      text-align: center;
-      position: relative; 
-      overflow: hidden;
+    /* wider callout box specific styling */
+    .wide-callout {
+      max-width: none;
+      width: 100%;
+      border-radius: var(--card-radius);
+      background: linear-gradient(135deg, rgba(255,255,255,0.55) 0%, rgba(245,240,255,0.65) 100%);
+      backdrop-filter: blur(45px);
+      padding: 2rem 2rem;
     }
     @media (min-width: 768px) {
-      .vision-container {
-        padding: 8rem 3rem;
+      .wide-callout {
+        padding: 3rem 4rem;
       }
     }
-    .vision-quote { 
-      font-family: 'Playfair Display', serif; 
-      font-size: clamp(1.8rem, 6vw, 3.5rem); 
-      font-style: italic; 
-      margin-bottom: 3rem; 
-      line-height: 1.2; 
+    .ra-message {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: var(--text-dark);
     }
+    .email-link {
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      background: #1c2b3a;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 100px;
+      transition: all 0.2s ease;
+      font-size: 1rem;
+    }
+    .email-link:hover {
+      background: #3e5871;
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
     .btn-primary {
       background: linear-gradient(135deg, #1c2b3a 0%, #3e5871 100%);
       color: #fff;
@@ -427,17 +430,9 @@
         padding: 1rem 2rem !important;
         font-size: 0.85rem;
       }
-    }
-    .vision-photo {
-      width: 160px; height: 160px; 
-      border-radius: 50%; 
-      border: 6px solid rgba(255,255,255,0.1);
-      margin: 0 auto 2rem; 
-      overflow: hidden; 
-      background: url('public/assets/IMG_6555.JPG') center/cover;
-    }
-    @media (min-width: 768px) {
-      .vision-photo { width: 220px; height: 220px; margin-bottom: 3rem; }
+      .ra-message {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -549,7 +544,6 @@
   <!-- Section 3: Student Development Theory -->
   <section id="theory">
     <div class="theory-grid">
-      <div class="theory-image gsap-reveal"></div>
       <div class="theory-content">
         <h2 class="section-title gsap-reveal" style="text-align:left;">The <span class="fancy-serif">Blueprint</span>.</h2>
         <p class="gsap-reveal" style="margin-bottom: 2.5rem; font-size: 1.1rem; opacity: 0.7;">Learning about Student Development Theories has fundamentally shaped my identification of potential challenges and strategic responses.</p>
@@ -602,17 +596,12 @@
       <div class="skill-card glass-card stagger-reveal">
         <span class="skill-num">04</span>
         <h3>Intentional Community Building</h3>
-        <p>Understanding what residents actually need and designing experiences around that. It requires attention, curiosity, and the consistency to do the work, translating directly to any leadership role.</p>
-      </div>
-      <div class="skill-card glass-card stagger-reveal">
-        <span class="skill-num">05</span>
-        <h3>Content Creation and Marketing Mindset</h3>
-        <p>Approaching attendance like a marketer. I use my social media experience to craft compelling messaging and visuals that make programs feel worth showing up for, capturing the attention of my floor.</p>
+        <p>I understand what residents actually need, this can be seen in the way I plan community builder events, daily interactions with my residents, and schedule one-on-one meetings to evaluate their well-being. Being an RA requires attention and curiosity, which translates directly to any leadership role.</p>
       </div>
     </div>
   </section>
 
-  <!-- Section 6: Campus Resources -->
+  <!-- Section 6: Campus Resources (6 cards - updated names + new Student Health Services) -->
   <section id="resources">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">The <span class="fancy-serif">Support</span>.</h2>
@@ -631,17 +620,19 @@
         <p>Resume building, mock interviews, and career exploration.</p>
         <span class="res-link">Visit Careers →</span>
       </a>
+      <!-- WE cARE pantry (fixed name) -->
       <a href="https://harrisburg.psu.edu/student-advocacy/food-insecurity" class="res-card glass-card stagger-reveal" target="_blank">
         <span class="theory-tag">foodpantry@psu.edu</span>
-        <h3>WE CARE Pantry</h3>
+        <h3>WE cARE</h3>
         <p>Confidential free essential items for students in need.</p>
         <span class="res-link">Visit Pantry →</span>
       </a>
+      <!-- Student Advocacy (formerly student care) -->
       <a href="https://harrisburg.psu.edu/student-advocacy" class="res-card glass-card stagger-reveal" target="_blank">
         <span class="theory-tag">HBGCares@psu.edu</span>
-        <h3>Student Care</h3>
+        <h3>Student Advocacy</h3>
         <p>Central hub for navigating difficult academic or personal situations.</p>
-        <span class="res-link">Visit Student Care →</span>
+        <span class="res-link">Visit Student Advocacy →</span>
       </a>
       <a href="https://harrisburg.psu.edu/global" class="res-card glass-card stagger-reveal" target="_blank">
         <span class="theory-tag">717-948-6647</span>
@@ -649,32 +640,40 @@
         <p>Visa advising and adjusting to life at home at Penn State.</p>
         <span class="res-link">Visit Global Engagement →</span>
       </a>
+      <!-- NEW 6th box: Student Health Services -->
+      <a href="https://studentaffairs.psu.edu/studenthealth" class="res-card glass-card stagger-reveal" target="_blank">
+        <span class="theory-tag">717-948-6015</span>
+        <h3>Student Health Services</h3>
+        <p>Care for your well-being, ranging from shots to counseling sessions.</p>
+        <span class="res-link">Visit Health Services →</span>
+      </a>
     </div>
-  </section>
-
-  <!-- Section 7: Community Building -->
-  <section id="community">
-    <div class="vision-container gsap-reveal">
-      <div class="vision-photo gsap-reveal"></div>
-      <blockquote class="vision-quote gsap-reveal">"A well-designed program does not just fill an hour, it creates a shared memory, and shared memories are the foundation of real community."</blockquote>
-      <div class="glass-card gsap-reveal" style="color: var(--text-dark); text-align: left; max-width: 850px; margin: 0 auto; padding: 2rem;">
-        <h4 style="margin-bottom: 1.5rem; font-size: 1.4rem; font-family: 'Playfair Display', serif; font-style: italic;">The Zombie Run Experience</h4>
-        <p style="margin-bottom: 1rem;">When I participated in Zombie Run, I was initially anxious about meeting new people in an unfamiliar setting. But the structure of the program—which was built around collaboration and shared goals rather than forced socializing—made it easy to connect naturally.</p>
-        <p>I left feeling more confident and more connected than I expected. As an RA, I will not just plan events but design experiences that make residents feel they genuinely belong here.</p>
+      <!-- ADDITIONAL WIDER CALLOUT BOX with RA personal message + email hyperlink -->
+      <div style="margin-top: 3rem; background: rgba(255,255,240,0.3); border-radius: 60px; padding: 2rem 1.5rem; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.5);">
+        <p class="ra-message" style="font-size: 1.15rem; max-width: 100%;">
+          If you ever feel overwhelmed and just need a helping hand or someone to talk to, please don't hesitate to reach out to me. Not only am I your RA, I'm your friend, career advisor, snack provider, and college counselor all in one. If you're curious about any of these resources or not sure where to start, just ask. I'll serve as your personal tour guide, and if needed, we'll figure it out together.
+        </p>
+        <div style="margin-top: 1.8rem;">
+          <a href="mailto:nkn5351@psu.edu" class="email-link">Contact me via email</a>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 1rem; opacity:0.6;">nkn5351@psu.edu — always just a message away.</p>
       </div>
-    </div>
+      
   </section>
 
-  <!-- Section 8: Vision -->
+  <!-- Section 8: Vision — replaced text, wider callout box + email hyperlink -->
   <section id="vision">
     <div class="section-header gsap-reveal">
       <h2 class="section-title">The <span class="fancy-serif">Vision</span>.</h2>
     </div>
-    <div class="glass-card gsap-reveal" style="text-align: center; padding: 3rem 2rem;">
-      <p style="font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 700; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-style: italic; line-height: 1.2;">"At the end of an academic year, I want my residents to leave feeling more confident in who they are than when they arrived."</p>
-      <p style="opacity: 0.7; max-width: 850px; margin: 0 auto; font-size: 1.1rem;">I want them to feel like they had someone in their corner. I hope each resident will leave with at least one meaningful connection they did not have before, a clearer sense of resources, and the confidence to advocate for themselves academically, personally, and socially.</p>
-      <div style="margin-top: 3rem;">
-        <a href="mailto:naomi@example.edu" class="btn-primary" style="padding: 1rem 2rem; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase; display: inline-block;">Get In Touch</a>
+    <!-- Wider callout box with full-width within container -->
+    <div class="glass-card gsap-reveal wide-callout" style="text-align: center; padding: 2rem;">
+      <p style="font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 700; margin-bottom: 2rem; font-family: 'Playfair Display', serif; font-style: italic; line-height: 1.2;">"College is exciting, but it can also be overwhelming, and nobody should have to navigate it alone. My goal as your RA is simple: to make this feel less like a dorm and more like home."</p>
+      <!-- Updated paragraph with "this house" (instead of floor) and full revised message -->
+      <p style="opacity: 0.8; max-width: 950px; margin: 0 auto; font-size: 1.1rem;">That means being genuinely available to you. Whether you're missing home or working through a disagreement with a friend, I'm here. No question is too small, no problem is too big, and no hour is too late. And if I'm ever unavailable, I'll always let you know in advance so you're never left without support. I plan to build a community grounded in respect, kindness, and real inclusion. It also looks like showing up for you beyond planned programs, whether that means helping you find a campus resource, walking you to an office you've never been to, or just sitting with you when things feel heavy. Having lived in the dorms myself, I know firsthand what this experience can feel like: the highs, the hard nights, and everything in between. That experience is exactly why this role means so much to me. I'm here to make a genuine difference in your college experience, and I take that seriously. Your room is where you sleep. <strong>This house</strong> is where you live. I want to make sure it actually feels that way.</p>
+      
+      <div style="margin-top: 2.5rem;">
+        <a href="mailto:nkn5351@psu.edu" class="btn-primary" style="padding: 1rem 2rem; border-radius: 100px; text-decoration: none; font-weight: 800; text-transform: uppercase; display: inline-block;">Get In Touch</a>
       </div>
     </div>
   </section>
@@ -723,9 +722,11 @@
       });
     });
 
-    document.querySelectorAll('.hero-image-wrap, .about-image, .about-image2, .theory-image, .vision-photo').forEach(img => {
-      img.addEventListener('mouseenter', () => gsap.to(img, { scale: 1.04, duration: 0.6, ease: "power2.out" }));
-      img.addEventListener('mouseleave', () => gsap.to(img, { scale: 1, duration: 0.6, ease: "power2.out" }));
+    document.querySelectorAll('.hero-image-wrap, .about-image, .about-image2, .vision-photo').forEach(img => {
+      if(img) {
+        img.addEventListener('mouseenter', () => gsap.to(img, { scale: 1.04, duration: 0.6, ease: "power2.out" }));
+        img.addEventListener('mouseleave', () => gsap.to(img, { scale: 1, duration: 0.6, ease: "power2.out" }));
+      }
     });
   </script>
 </body>
